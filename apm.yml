@@ -1,0 +1,20 @@
+name: agent-skills
+version: 1.0.0
+description: APM project for agent-skills
+author: Laplusdestiny
+# Which agent platforms to deploy to (uncomment to pin):
+targets:
+  - copilot
+  - claude
+
+dependencies:
+  apm:
+    - git: jamesprial/github-skills
+      skills:
+        - gh-cli
+    - git: mattpocock/skills
+      skills:
+        - grill-me
+  mcp: []
+includes: auto
+scripts: {}
