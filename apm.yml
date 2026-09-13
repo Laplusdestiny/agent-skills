@@ -12,9 +12,6 @@ dependencies:
     - git: jamesprial/github-skills
       skills:
         - gh-cli
-    - git: mattpocock/skills
-      skills:
-        - grill-me
   mcp: []
 includes: auto
 scripts: {}
