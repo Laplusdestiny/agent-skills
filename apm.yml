@@ -12,6 +12,7 @@ dependencies:
     - git: jamesprial/github-skills
       skills:
         - gh-cli
+    - openai/codex-plugin-cc
   mcp: []
 includes: auto
 scripts: {}
