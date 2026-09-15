@@ -26,6 +26,7 @@ apm install
 
 - **git-operations** — ブランチ作成・コミット（Conventional Commits）・PR作成・コンフリクト解消など、Git操作を安全に行うためのガイド
 - **vercel-cli** — Vercel CLIを使ったデプロイ、ビルド/ランタイムログの確認、環境変数の同期を行うためのガイド
+- **antigravity-collab** — Antigravity CLI（`agy`）と連携するためのガイド。ユーザーの明示的な依頼時にセカンドオピニオンを求めるモードと、大規模コンテキスト解析・マルチモーダル読解・ブラウザUI検証・並列マルチエージェント分解などAntigravityが得意なタスクを委任するモードの両方をカバーする
 
 外部依存スキル（`gh-cli`, `grill-me` など）は `apm.yml` / `apm.lock.yaml` で管理しているため、ここでは一覧化しません。最新の依存関係は `apm.yml` を参照してください。
 
