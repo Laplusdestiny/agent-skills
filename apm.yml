@@ -1,5 +1,5 @@
 name: agent-skills
-version: 1.0.0
+version: 1.1.0
 description: APM project for agent-skills
 author: Laplusdestiny
 # Which agent platforms to deploy to (uncomment to pin):
