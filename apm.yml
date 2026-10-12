@@ -13,6 +13,9 @@ dependencies:
       skills:
         - gh-cli
     - openai/codex-plugin-cc
+    - git: github/awesome-copilot
+      skills:
+        - harness-engineering
   mcp: []
 includes: auto
 scripts: {}

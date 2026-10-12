@@ -1,6 +1,23 @@
 lockfile_version: '1'
 apm_version: 0.30.0
 dependencies:
+- repo_url: github/awesome-copilot
+  name: awesome-copilot
+  host: github.com
+  resolved_commit: 70ddff7fab9d4d49743d221b56d761cff58048d0
+  version: unknown
+  package_type: skill_bundle
+  deployed_files:
+  - .agents/skills/harness-engineering
+  - .agents/skills/harness-engineering/SKILL.md
+  - .claude/skills/harness-engineering
+  - .claude/skills/harness-engineering/SKILL.md
+  deployed_file_hashes:
+    .agents/skills/harness-engineering/SKILL.md: sha256:536ae3b482b68d818a97e511405c220d3cf3fb87f34bc4d30722dc996f4b064f
+    .claude/skills/harness-engineering/SKILL.md: sha256:536ae3b482b68d818a97e511405c220d3cf3fb87f34bc4d30722dc996f4b064f
+  content_hash: sha256:9b2c0361dee0d47b3d9fede7418d4b34399e6cc4a4962179eb420cd46664c660
+  skill_subset:
+  - harness-engineering
 - repo_url: jamesprial/github-skills
   name: github-skills
   host: github.com
@@ -43,23 +60,13 @@ dependencies:
   skill_subset:
   - gh-cli
   declared_license: MIT
-- repo_url: mattpocock/skills
-  name: mattpocock-skills
+- repo_url: openai/codex-plugin-cc
+  name: 955cda02c38237dc733a99e63011a0b116083c95a300f6c0c1f22b4b29cd86ac
   host: github.com
-  resolved_commit: 3cca18b368ae95cdbdebbff572ccafa662551015
-  version: 1.2.3
+  resolved_commit: db52e28f4d9ded852ab3942cea316258ae4ef346
+  version: db52e28
   package_type: apm_package
-  deployed_files:
-  - .claude/skills/grill-me
-  - .claude/skills/grill-me/SKILL.md
-  - .claude/skills/grill-me/agents/openai.yaml
-  deployed_file_hashes:
-    .claude/skills/grill-me/SKILL.md: sha256:caaf8b8de1684f96e26b28f3c29189db5c89cce4b73e1c93d86164f66ef88637
-    .claude/skills/grill-me/agents/openai.yaml: sha256:c061e39c3e0f9d865fb1b97556d485704af2a8a58f4b8221a8917a5c2074a32b
-  content_hash: sha256:c65bbfc43f4c9799c26575fb8fca4a82834feba5a49da423f610650be3603383
-  skill_subset:
-  - grill-me
-  declared_license: MIT
+  content_hash: sha256:d8f78123347f94bd619d10ad4c7c22436fdecc4db10748583089fa4f23c3532c
 deployments:
 - kind: project-relative
   target: claude
@@ -135,31 +142,76 @@ deployments:
   content_hash: sha256:20f8d4b208629fca5353273141bd79187157efa8f41f38fa4138d542c8a34d32
 - kind: project-relative
   target: claude
-  value: .claude/skills/grill-me
+  value: .claude/skills/git-operations
   runtime: null
   scope: project
   owners:
-  - mattpocock/skills
-  active_owner: mattpocock/skills
+  - .
+  active_owner: .
   content_hash: null
 - kind: project-relative
   target: claude
-  value: .claude/skills/grill-me/SKILL.md
+  value: .claude/skills/git-operations/SKILL.md
   runtime: null
   scope: project
   owners:
-  - mattpocock/skills
-  active_owner: mattpocock/skills
-  content_hash: sha256:caaf8b8de1684f96e26b28f3c29189db5c89cce4b73e1c93d86164f66ef88637
+  - .
+  active_owner: .
+  content_hash: sha256:2418ada39452a99d8ecd5f863ad584b377199dd6eefb7cc43d7c0c3a7292d6c0
 - kind: project-relative
   target: claude
-  value: .claude/skills/grill-me/agents/openai.yaml
+  value: .claude/skills/harness-engineering
   runtime: null
   scope: project
   owners:
-  - mattpocock/skills
-  active_owner: mattpocock/skills
-  content_hash: sha256:c061e39c3e0f9d865fb1b97556d485704af2a8a58f4b8221a8917a5c2074a32b
+  - github/awesome-copilot
+  active_owner: github/awesome-copilot
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/harness-engineering/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - github/awesome-copilot
+  active_owner: github/awesome-copilot
+  content_hash: sha256:536ae3b482b68d818a97e511405c220d3cf3fb87f34bc4d30722dc996f4b064f
+- kind: project-relative
+  target: claude
+  value: .claude/skills/vercel-cli
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/vercel-cli/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:0326b437cdc8995822a1cc1920bab8de0caaa2cf010f3b664d118208543e9a54
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/harness-engineering
+  runtime: null
+  scope: project
+  owners:
+  - github/awesome-copilot
+  active_owner: github/awesome-copilot
+  content_hash: null
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/harness-engineering/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - github/awesome-copilot
+  active_owner: github/awesome-copilot
+  content_hash: sha256:536ae3b482b68d818a97e511405c220d3cf3fb87f34bc4d30722dc996f4b064f
 - kind: project-relative
   target: legacy
   value: .agents/skills/gh-cli
@@ -232,3 +284,53 @@ deployments:
   - jamesprial/github-skills
   active_owner: jamesprial/github-skills
   content_hash: sha256:20f8d4b208629fca5353273141bd79187157efa8f41f38fa4138d542c8a34d32
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/git-operations
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: null
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/git-operations/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:2418ada39452a99d8ecd5f863ad584b377199dd6eefb7cc43d7c0c3a7292d6c0
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/vercel-cli
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: null
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/vercel-cli/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:0326b437cdc8995822a1cc1920bab8de0caaa2cf010f3b664d118208543e9a54
+local_deployed_files:
+- .agents/skills/git-operations
+- .agents/skills/git-operations/SKILL.md
+- .agents/skills/vercel-cli
+- .agents/skills/vercel-cli/SKILL.md
+- .claude/skills/git-operations
+- .claude/skills/git-operations/SKILL.md
+- .claude/skills/vercel-cli
+- .claude/skills/vercel-cli/SKILL.md
+local_deployed_file_hashes:
+  .agents/skills/git-operations/SKILL.md: sha256:2418ada39452a99d8ecd5f863ad584b377199dd6eefb7cc43d7c0c3a7292d6c0
+  .agents/skills/vercel-cli/SKILL.md: sha256:0326b437cdc8995822a1cc1920bab8de0caaa2cf010f3b664d118208543e9a54
+  .claude/skills/git-operations/SKILL.md: sha256:2418ada39452a99d8ecd5f863ad584b377199dd6eefb7cc43d7c0c3a7292d6c0
+  .claude/skills/vercel-cli/SKILL.md: sha256:0326b437cdc8995822a1cc1920bab8de0caaa2cf010f3b664d118208543e9a54
