@@ -1,0 +1,10 @@
+schema_version: "1.1"
+name: delegate-fix-to-codex
+expected_outcome: |
+  Claude delegates the pagination off-by-one fix to Codex in a separate git worktree (not the
+  user's working tree), reviews the resulting patch, runs the tests itself, applies the verified
+  patch to the working tree without committing, and reports what was delegated, what was
+  verified, and the outcome. `python3 -m unittest` passes in the working tree afterwards and
+  main still has exactly one commit.
+context:
+  scaffold_script: place-files.sh

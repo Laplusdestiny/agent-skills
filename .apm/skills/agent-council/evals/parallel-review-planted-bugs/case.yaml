@@ -1,0 +1,10 @@
+schema_version: "1.1"
+name: parallel-review-planted-bugs
+expected_outcome: |
+  Claude reviews the feature/discounts diff itself, sends the same diff to Codex and agy in
+  read-only mode, verifies their findings against the code, and reports a consensus table that
+  includes the three planted bugs: token comparison with == instead of hmac.compare_digest
+  (timing attack), the pagination off-by-one (start = page * per_page skips the first page),
+  and apply_discount accepting percent > 100 (negative prices). No files in the repo are modified.
+context:
+  scaffold_script: place-files.sh

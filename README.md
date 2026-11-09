@@ -26,7 +26,7 @@ apm install
 
 - **git-operations** — ブランチ作成・コミット（Conventional Commits）・PR作成・コンフリクト解消など、Git操作を安全に行うためのガイド
 - **vercel-cli** — Vercel CLIを使ったデプロイ、ビルド/ランタイムログの確認、環境変数の同期を行うためのガイド
-- **antigravity-collab** — Antigravity CLI（`agy`）と連携するためのガイド。ユーザーの明示的な依頼時にセカンドオピニオンを求めるモードと、大規模コンテキスト解析・マルチモーダル読解・ブラウザUI検証・並列マルチエージェント分解などAntigravityが得意なタスクを委任するモードの両方をカバーする
+- **agent-council** — Claude Code を司令塔に、Codex CLI（`codex`）と Antigravity CLI（`agy`）を連携させるスキル。並列マルチレビュー・クロスレビュー・専用 git worktree での実装委任・設計相談（合議）・UI/デザインレビューをカバーし、結果は Claude が検証したうえで指摘ごとの合意表にまとめる（旧 `antigravity-collab` を統合）
 
 外部依存スキル（`gh-cli`, `grill-me` など）は `apm.yml` / `apm.lock.yaml` で管理しているため、ここでは一覧化しません。最新の依存関係は `apm.yml` を参照してください。
 
