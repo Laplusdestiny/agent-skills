@@ -28,6 +28,8 @@ CASES = [
     ("D1", S, "sudo rm -rf /"),
     ("D1", S, "git status && rm -rf /"),
     ("D1", S, "bash -c 'rm -rf ~'"),
+    ("D1", S, "ls\nrm -rf /"),
+    ("A1", S, "git status\ngit reset --hard"),
     ("D1", S, "sudo sh -c \"rm -rf /\""),
     (None, S, "rm -rf ./build"),
     (None, S, "rm -rf node_modules"),
@@ -215,6 +217,9 @@ NOT_ALLOWED = [
     "gh pr create",
     "ls && npm install",
     "cat .env",
+    "grep PASSWORD .env",
+    "rg -n token .env.local",
+    "ls && grep KEY server.pem",
     "",
 ]
 

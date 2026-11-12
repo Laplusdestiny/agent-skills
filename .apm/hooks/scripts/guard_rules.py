@@ -515,7 +515,8 @@ def _shell_readonly(tokens: List[str]) -> bool:
         return False
     if cmd == "tree" and "-o" in args:
         return False
-    return not prints_secret(tokens)
+    # never auto-approve anything that touches secret files (grep KEY .env, ...)
+    return not any(is_secret_file(arg) for arg in args)
 
 
 GH_READONLY = [
