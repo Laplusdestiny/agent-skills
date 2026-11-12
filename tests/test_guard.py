@@ -40,10 +40,26 @@ class ParseInputTest(unittest.TestCase):
             payload = {"toolName": tool, "toolArgs": json.dumps({"path": "/repo/.env"})}
             self.assertEqual(guard.parse_input(payload), (Action("write", "/repo/.env"), "copilot"), tool)
 
+    def test_parse_claude_read(self):
+        payload = {"tool_name": "Read", "tool_input": {"file_path": "/repo/.env"}}
+        self.assertEqual(guard.parse_input(payload), (Action("read", "/repo/.env"), "claude"))
+        payload = {"tool_name": "Grep", "tool_input": {"pattern": "KEY", "path": "/repo/.env"}}
+        self.assertEqual(guard.parse_input(payload), (Action("read", "/repo/.env"), "claude"))
+
+    def test_parse_copilot_view(self):
+        payload = {"toolName": "view", "toolArgs": json.dumps({"path": "/repo/.env"})}
+        self.assertEqual(guard.parse_input(payload), (Action("read", "/repo/.env"), "copilot"))
+
+    def test_parse_vscode_read_file(self):
+        payload = {"tool_name": "read_file", "tool_input": {"filePath": "/repo/.env"}}
+        self.assertEqual(guard.parse_input(payload), (Action("read", "/repo/.env"), "claude"))
+
     def test_parse_other_tool(self):
-        for tool in ("Read", "Grep"):
-            payload = {"tool_name": tool, "tool_input": {"file_path": "/repo/a.py", "pattern": "x"}}
+        for tool in ("Glob", "WebFetch"):
+            payload = {"tool_name": tool, "tool_input": {"path": "/repo", "pattern": "*.py", "url": "x"}}
             self.assertEqual(guard.parse_input(payload), (None, "claude"), tool)
+        payload = {"tool_name": "Grep", "tool_input": {"pattern": "x"}}
+        self.assertEqual(guard.parse_input(payload), (None, "claude"))
 
 
 class FormatOutputTest(unittest.TestCase):
@@ -107,9 +123,19 @@ class EndToEndTest(unittest.TestCase):
         self.assertEqual(code, 0)
         self.assertEqual(json.loads(out)["permissionDecision"], "deny")
 
-    def test_e2e_unrelated_tool_is_silent(self):
-        code, out = run_guard({"tool_name": "Read", "tool_input": {"file_path": "/repo/.env"}})
+    def test_e2e_read_regular_file_is_silent(self):
+        code, out = run_guard({"tool_name": "Read", "tool_input": {"file_path": "/repo/src/app.py"}})
         self.assertEqual((code, out), (0, ""))
+
+    def test_e2e_claude_read_secret_asks(self):
+        code, out = run_guard({"tool_name": "Read", "tool_input": {"file_path": "/repo/.env"}})
+        decision = json.loads(out)["hookSpecificOutput"]
+        self.assertEqual(decision["permissionDecision"], "ask")
+        self.assertIn("A7", decision["permissionDecisionReason"])
+
+    def test_e2e_copilot_view_secret_is_denied(self):
+        code, out = run_guard({"toolName": "view", "toolArgs": json.dumps({"path": "/repo/.env"})})
+        self.assertEqual(json.loads(out)["permissionDecision"], "deny")
 
     def test_e2e_does_not_write_bytecode(self):
         shutil.rmtree(os.path.join(SCRIPTS_DIR, "__pycache__"), ignore_errors=True)

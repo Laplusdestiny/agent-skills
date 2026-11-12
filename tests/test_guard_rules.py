@@ -11,7 +11,7 @@ sys.path.insert(0, SCRIPTS_DIR)
 
 from guard_rules import Action, evaluate, is_allowed  # noqa: E402
 
-S, W = "shell", "write"
+S, W, R = "shell", "write", "read"
 
 # (expected rule id or None, action kind, value). None = no deny/ask rule applies.
 CASES = [
@@ -152,6 +152,16 @@ CASES = [
     ("A6", W, "C:\\repo\\.claude\\settings.json"),
     (None, W, "/repo/.claude/skills/x/SKILL.md"),
     (None, W, "/repo/src/app.py"),
+    # A7: reading secret files with file-read tools
+    ("A7", R, "/repo/.env"),
+    ("A7", R, "/repo/config/.env.production"),
+    ("A7", R, "C:\\repo\\.env.local"),
+    ("A7", R, "/home/u/.ssh/id_ed25519"),
+    ("A7", R, "/repo/certs/server.pem"),
+    (None, R, "/repo/.env.example"),
+    (None, R, "/home/u/.ssh/id_ed25519.pub"),
+    (None, R, "/repo/src/app.py"),
+    (None, R, "/repo"),
 ]
 
 

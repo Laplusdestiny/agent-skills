@@ -19,7 +19,17 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from guard_rules import Action, Decision, evaluate  # noqa: E402
 
 WRITE_TOOL_HINTS = ("edit", "write", "create", "replace", "insert")
+# Claude: Read / Grep, Copilot CLI: view / grep, VS Code: read_file
+READ_TOOLS = {"read", "grep", "view", "read_file"}
 PATH_KEYS = ("file_path", "path", "filePath", "notebook_path")
+
+
+def _path_arg(args: Dict[str, Any]) -> Optional[str]:
+    for key in PATH_KEYS:
+        path = args.get(key)
+        if isinstance(path, str) and path:
+            return path
+    return None
 
 
 def _to_action(tool_name: str, args: Dict[str, Any]) -> Optional[Action]:
@@ -27,11 +37,13 @@ def _to_action(tool_name: str, args: Dict[str, Any]) -> Optional[Action]:
     if isinstance(command, str):
         return Action("shell", command)
     lowered = tool_name.lower()
+    path = _path_arg(args)
+    if path is None:
+        return None
     if any(hint in lowered for hint in WRITE_TOOL_HINTS):
-        for key in PATH_KEYS:
-            path = args.get(key)
-            if isinstance(path, str) and path:
-                return Action("write", path)
+        return Action("write", path)
+    if lowered in READ_TOOLS:
+        return Action("read", path)
     return None
 
 

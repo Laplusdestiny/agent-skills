@@ -34,7 +34,7 @@ apm install
 
 ## ガードレール hooks（`.apm/hooks/`）
 
-`apm install` したプロジェクトに PreToolUse hook を配布し、エージェントのシェル実行とファイル書き込みを
+`apm install` したプロジェクトに PreToolUse hook を配布し、エージェントのシェル実行・ファイル書き込み・秘密ファイルの読み取りを
 **deny（ブロック）/ ask（ユーザー確認）/ allow（自動許可）** の3段階で判定します。優先順位は deny > ask > allow で、
 どれにも該当しない操作は hook が何もせず通常の権限フローに任せます。設計の詳細は
 [`docs/superpowers/specs/2026-11-12-guardrail-hooks-design.md`](docs/superpowers/specs/2026-11-12-guardrail-hooks-design.md) を参照してください。
@@ -42,7 +42,7 @@ apm install
 | 判定 | 主な対象 |
 | --- | --- |
 | deny | `rm -rf /`・`~`・`.`・`*`、main/master への force push、`--no-verify`、`mkfs`/`dd of=/dev/...` などの破壊的コマンド、`cat .env` など秘密ファイルの表示、`.env`・秘密鍵・`.ssh/` への書き込み、`.git/` 内部やロックファイルの手編集、`gh repo delete` |
-| ask | `git reset --hard`・`clean -f`・`checkout --`・`restore`・`branch -D`・リモートブランチ削除、その他の force push、main/master への直接 push、`gh pr merge`・`gh release create`・`npm publish`・`vercel --prod`、`sudo`、`curl ... \| sh`、`.claude/settings*.json`・`.github/hooks/` の編集 |
+| ask | `git reset --hard`・`clean -f`・`checkout --`・`restore`・`branch -D`・リモートブランチ削除、その他の force push、main/master への直接 push、`gh pr merge`・`gh release create`・`npm publish`・`vercel --prod`、`sudo`、`curl ... \| sh`、`.claude/settings*.json`・`.github/hooks/` の編集、Read / Grep ツールでの秘密ファイル（`.env`・秘密鍵など）の読み取り |
 | allow | 読み取り専用の `git`（status/diff/log/show など）、`ls`・`cat`・`grep`・`rg`・`find` などのシェルコマンド、`gh pr view/list` などの参照系 `gh`。複合コマンドは全セグメントが該当する場合のみ。`$(...)`・バッククォート・リダイレクトを含むものは対象外 |
 
 `bash -c '...'` に渡されたスクリプトも同じルールで再帰的に判定します。
@@ -58,7 +58,7 @@ apm install
 ### ルールを追加する
 
 1. `.apm/hooks/scripts/guard_rules.py` に判定関数を書き、`RULES` に `Rule(id, decision, scope, check, reason)` を追加する
-   （`scope` は `segment` / `raw_segment` / `command` / `path`。詳細はファイル冒頭の docstring）。
+   （`scope` は `segment` / `raw_segment` / `command` / `path` / `read_path`。詳細はファイル冒頭の docstring）。
 2. `tests/test_guard_rules.py` の `CASES` に、ブロックされる例とされない例を追加する。
 3. `python3 -m unittest discover -s tests` が通ることを確認する（CI でも Python 3.8 / 3.12 で実行）。
 
@@ -67,7 +67,7 @@ apm install
 - 正規表現・トークン解析によるバックストップであり、サンドボックスではありません。変数展開・エイリアス・スクリプトファイル経由の実行などでは回避できます。
 - hook 自体が想定外のエラーを起こした場合は fail-open（何も判定せず通常フロー）です。ガードのバグで全ツールが止まることを避けるためです。
 - 実行には `python3`（3.8 以上）が必要です。
-- Claude Code では APM の変換によりすべてのツール呼び出しで起動しますが、シェル実行とファイル書き込み以外は即座に終了します。
+- Claude Code では APM の変換によりすべてのツール呼び出しで起動しますが、シェル実行・ファイル書き込み・ファイル読み取り以外は即座に終了します。
 
 ## 対応ターゲット
 

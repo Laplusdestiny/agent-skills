@@ -11,6 +11,7 @@ Scopes:
   - "command":     predicate(command) on the whole command string
   - "path":        predicate(path) on a file path being written, with "\\"
                    normalized to "/" and a leading "/" ensured
+  - "read_path":   same as "path", for files read by file-read tools
 """
 
 from __future__ import annotations
@@ -22,7 +23,7 @@ from typing import Callable, List, NamedTuple, Optional, Sequence, Tuple
 
 
 class Action(NamedTuple):
-    kind: str  # "shell" | "write"
+    kind: str  # "shell" | "write" | "read"
     value: str  # shell command or file path
 
 
@@ -35,7 +36,7 @@ class Decision(NamedTuple):
 class Rule(NamedTuple):
     id: str
     decision: str  # "deny" | "ask"
-    scope: str  # "segment" | "raw_segment" | "command" | "path"
+    scope: str  # "segment" | "raw_segment" | "command" | "path" | "read_path"
     check: Callable
     reason: str
 
@@ -423,6 +424,8 @@ RULES: List[Rule] = [
          "Lockfiles are generated; run the package manager instead of editing them."),
     Rule("A6", "ask", "path", writes_harness,
          "Editing agent harness settings or hooks; confirm with the user."),
+    Rule("A7", "ask", "read_path", is_secret_file,
+         "Reading a secret file (.env, private keys) exposes it to the transcript; confirm with the user."),
 ]
 
 SHELLS = {"sh", "bash", "zsh", "dash", "ksh"}
@@ -442,9 +445,10 @@ def _inline_scripts(segments: List[List[str]]) -> List[str]:
 
 
 def _matches(action: Action, depth: int = 0) -> List[Rule]:
-    if action.kind == "write":
+    if action.kind in ("write", "read"):
+        scope = "path" if action.kind == "write" else "read_path"
         path = _normalize_path(action.value)
-        return [r for r in RULES if r.scope == "path" and r.check(path)]
+        return [r for r in RULES if r.scope == scope and r.check(path)]
     command = action.value
     segments, _ = split_segments(command)
     hits = [r for r in RULES if r.scope == "command" and r.check(command)]

@@ -45,6 +45,7 @@ PreToolUse hook として強制可能なルールに置き換える（harness-en
 | A4 | マージ/リリース/デプロイ | `gh pr merge`, `gh release create`, `npm publish`, `vercel --prod`, `vercel deploy --prod` |
 | A5 | 権限昇格・リモートスクリプトのパイプ実行 | `sudo ...`, `curl ... \| sh`, `wget -O- ... \| bash` |
 | A6 | ハーネス自身の編集（Edit/Write） | `.claude/settings.json`, `.claude/settings.local.json`, `.github/hooks/` 配下 |
+| A7 | ファイル読み取りツールでの秘密ファイル参照（Read/Grep 等） | Claude `Read` / `Grep`、Copilot CLI `view` / `grep`、VS Code `read_file` で `.env*`（例外あり）, `*.pem`, `*.key`, `id_rsa` 等を対象にした場合 |
 
 ブランチ判定（D2 / A3）はコマンド引数に `main` / `master` が refspec として明示された場合のみ行う
 （hook 内で現在ブランチは調べない）。ブランチ未指定の force push（`git push -f`）は A2 として ask になる。
@@ -88,17 +89,18 @@ tests/test_guard.py        # unittest
   スクリプトを `.claude/hooks/<pkg>/scripts/`、Copilot 向けに `.github/hooks/scripts/<pkg>/scripts/` へ配置する
   （APM 0.35.1 で検証済み。Claude Code は余分な `bash` キーを無視することも実機で確認済み）。
 - **入力正規化**: Claude 形式（`tool_name` / `tool_input`）と Copilot CLI 形式（`toolName` / `toolArgs` が JSON 文字列）を
-  受け取り、`Action(kind="shell", command=...)` または `Action(kind="write", path=...)` に変換する。
+  受け取り、`Action(kind="shell" | "write" | "read", value=...)` に変換する。
   - shell: `Bash`, `bash`, `shell`, `run_in_terminal` 等、入力に文字列 `command` を持つツール
   - write: `Edit`, `Write`, `MultiEdit`, `NotebookEdit`, `edit`, `create` 等、ツール名に edit/write/create/replace/insert を含み
     `file_path` / `path` / `filePath` / `notebook_path` を持つツール
+  - read: `Read`, `Grep`, `view`, `grep`, `read_file`（大文字小文字を無視）で、同じパスキーを持つツール
   - それ以外は即座に終了（出力なし）。
 - **コマンド分割**: `shlex`（`punctuation_chars=True`）でトークン化し、`&&`, `||`, `;`, `|`, `&`, 改行でセグメントに分割。
   クォート不整合で `shlex` が失敗した場合は空白分割にフォールバックし、allow は返さない。
   各セグメントは先頭の `sudo`, `env`, `nohup`, `time`, `command`, `exec`, `nice` とその直後のオプション/代入を除去してから照合する。
   D4 の fork bomb、A5 のパイプ実行のようにセグメントをまたぐパターンはコマンド全体に対して照合する。
 - **ルール表現**: `guard_rules.py` に `Rule(id, decision, kind, pattern, reason, scope)` のリストとして定義する
-  （`scope` は `segment` / `command` / `path`）。allow は別関数で判定する（コマンド名ごとの引数制約が必要なため）。
+  （`scope` は `segment` / `raw_segment` / `command` / `path` / `read_path`）。allow は別関数で判定する（コマンド名ごとの引数制約が必要なため）。
 - **エラー処理**: 想定外の例外は stderr に警告を出して exit 0（fail-open）。ガードのバグで全ツールが止まることを避ける。
   これは正規表現ベースのバックストップであり、サンドボックスではない旨を README に明記する。
 - **互換性**: Python 3.8+、標準ライブラリのみ。
