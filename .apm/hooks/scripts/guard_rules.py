@@ -461,10 +461,113 @@ def _matches(action: Action, depth: int = 0) -> List[Rule]:
     return hits
 
 
+# ---------------------------------------------------------------------------
+# Allow list (L1-L3): read-only commands auto-approved on Claude Code
+# ---------------------------------------------------------------------------
+
+UNSAFE_SUBSTRINGS = ("$(", "`", "<(", ">(")
+
+GIT_READONLY_ANY_ARGS = {"status", "diff", "log", "show", "blame", "rev-parse", "ls-files"}
+GIT_BRANCH_LIST_FLAGS = {"-a", "-r", "-v", "-vv", "--all", "--remotes", "--list", "--show-current"}
+GIT_UNSAFE_ARG_PREFIXES = ("--output", "--ext-diff")
+
+
+def _git_readonly(tokens: List[str]) -> bool:
+    i = 1
+    while i < len(tokens) and tokens[i].startswith("-"):
+        if tokens[i] == "-C" and i + 1 < len(tokens):
+            i += 2
+        elif tokens[i] == "--no-pager":
+            i += 1
+        else:
+            return False  # e.g. -c core.pager=... can run arbitrary commands
+    if i >= len(tokens):
+        return False
+    sub, args = tokens[i], tokens[i + 1 :]
+    if any(arg.startswith(GIT_UNSAFE_ARG_PREFIXES) for arg in args):
+        return False
+    if sub in GIT_READONLY_ANY_ARGS:
+        return True
+    if sub == "remote":
+        return args in ([], ["-v"], ["--verbose"])
+    if sub == "branch":
+        return all(arg in GIT_BRANCH_LIST_FLAGS for arg in args)
+    if sub == "stash":
+        return args[:1] == ["list"]
+    return False
+
+
+SHELL_READONLY = {
+    "ls", "pwd", "cd", "cat", "head", "tail", "wc", "grep", "rg", "which", "tree",
+    "file", "stat", "du", "df", "echo",
+}
+FIND_UNSAFE = {"-delete", "-exec", "-execdir", "-ok", "-okdir", "-fprint", "-fprint0", "-fprintf", "-fls"}
+
+
+def _shell_readonly(tokens: List[str]) -> bool:
+    cmd = tokens[0]
+    args = tokens[1:]
+    if cmd == "find":
+        return not any(arg in FIND_UNSAFE for arg in args)
+    if cmd not in SHELL_READONLY:
+        return False
+    if cmd == "rg" and any(arg == "--pre" or arg.startswith("--pre=") for arg in args):
+        return False
+    if cmd == "tree" and "-o" in args:
+        return False
+    return not prints_secret(tokens)
+
+
+GH_READONLY = [
+    ["pr", "view"], ["pr", "list"], ["pr", "diff"], ["pr", "checks"], ["pr", "status"],
+    ["issue", "view"], ["issue", "list"],
+    ["run", "view"], ["run", "list"],
+]
+
+
+def _gh_readonly(tokens: List[str]) -> bool:
+    return tokens[0] == "gh" and tokens[1:3] in GH_READONLY
+
+
+ALLOW_CHECKS = [("L1", _git_readonly), ("L2", _shell_readonly), ("L3", _gh_readonly)]
+
+
+def _is_redirection(token: str) -> bool:
+    return bool(token) and set(token) <= set("<>&") and ("<" in token or ">" in token)
+
+
+def allow_rule_id(command: str) -> Optional[str]:
+    """Return the allow category of the first segment if every segment is read-only."""
+    if any(s in command for s in UNSAFE_SUBSTRINGS):
+        return None
+    segments, ok = split_segments(command)
+    if not ok or not segments:
+        return None
+    first_id: Optional[str] = None
+    for tokens in segments:
+        if any(_is_redirection(t) or t in ("(", ")") for t in tokens):
+            return None
+        if ASSIGNMENT.match(tokens[0]):
+            return None
+        rule_id = next((rid for rid, check in ALLOW_CHECKS if check(tokens)), None)
+        if rule_id is None:
+            return None
+        first_id = first_id or rule_id
+    return first_id
+
+
+def is_allowed(command: str) -> bool:
+    return allow_rule_id(command) is not None
+
+
 def evaluate(action: Action) -> Optional[Decision]:
     hits = _matches(action)
     for wanted in ("deny", "ask"):
         for rule in hits:
             if rule.decision == wanted:
                 return Decision(rule.decision, rule.id, rule.reason)
+    if action.kind == "shell":
+        rule_id = allow_rule_id(action.value)
+        if rule_id is not None:
+            return Decision("allow", rule_id, "Read-only command.")
     return None

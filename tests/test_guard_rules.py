@@ -9,7 +9,7 @@ SCRIPTS_DIR = os.path.join(
 )
 sys.path.insert(0, SCRIPTS_DIR)
 
-from guard_rules import Action, evaluate  # noqa: E402
+from guard_rules import Action, evaluate, is_allowed  # noqa: E402
 
 S, W = "shell", "write"
 
@@ -175,6 +175,71 @@ class RuleTableTest(unittest.TestCase):
         self.assertEqual((result.decision, result.rule_id), ("deny", "D1"))
         result = evaluate(Action(S, "sudo rm -rf /"))
         self.assertEqual((result.decision, result.rule_id), ("deny", "D1"))
+
+
+ALLOWED = [
+    "git status",
+    "git -C sub log --oneline",
+    "git branch -a",
+    "git branch",
+    "git remote -v",
+    "git stash list",
+    "git diff --stat HEAD~1",
+    "ls -la && git diff",
+    "rg foo | head",
+    "find . -name '*.py'",
+    "gh pr view 12",
+    "gh run list --limit 5",
+    "cd sub && git status",
+    "cat README.md",
+    "pwd",
+]
+
+NOT_ALLOWED = [
+    "git branch -D x",
+    "git branch new-feature",
+    "git remote add origin x",
+    "git stash pop",
+    "git push",
+    "find . -delete",
+    "find . -exec rm {} \\;",
+    "echo $(whoami)",
+    "echo `whoami`",
+    "echo hi > out.txt",
+    "cat a >> b",
+    "diff <(ls a) <(ls b)",
+    "FOO=1 ls",
+    "npm test",
+    'echo "unterminated',
+    "gh pr merge 1",
+    "gh pr create",
+    "ls && npm install",
+    "cat .env",
+    "",
+]
+
+
+class AllowTest(unittest.TestCase):
+    def test_allow_table(self):
+        for command in ALLOWED:
+            with self.subTest(command=command):
+                self.assertTrue(is_allowed(command))
+                result = evaluate(Action(S, command))
+                self.assertIsNotNone(result)
+                self.assertEqual(result.decision, "allow")
+        for command in NOT_ALLOWED:
+            with self.subTest(command=command):
+                self.assertFalse(is_allowed(command))
+                result = evaluate(Action(S, command))
+                self.assertTrue(result is None or result.decision != "allow")
+
+    def test_allow_rule_ids(self):
+        self.assertEqual(evaluate(Action(S, "git status")).rule_id, "L1")
+        self.assertEqual(evaluate(Action(S, "ls && git status")).rule_id, "L2")
+        self.assertEqual(evaluate(Action(S, "gh pr list")).rule_id, "L3")
+
+    def test_writes_are_never_allowed(self):
+        self.assertIsNone(evaluate(Action(W, "/repo/src/app.py")))
 
 
 if __name__ == "__main__":
