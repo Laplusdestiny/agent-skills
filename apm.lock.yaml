@@ -1,5 +1,5 @@
 lockfile_version: '1'
-apm_version: 0.30.0
+apm_version: 0.35.0
 dependencies:
 - repo_url: github/awesome-copilot
   name: awesome-copilot
@@ -68,6 +68,582 @@ dependencies:
   package_type: apm_package
   content_hash: sha256:d8f78123347f94bd619d10ad4c7c22436fdecc4db10748583089fa4f23c3532c
 deployments:
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:591f32b51946959ec45e904c695155060160652e0dd9dc4bb5f1be51d6f7d8d1
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/delegate-fix-to-codex/case.yaml
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:2b39faf764c1479eef7936f4fbd1c122dcbffc8d561967145ffc63b80465769f
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/delegate-fix-to-codex/files/base/README.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:1173ec78e94697ab0df2dd9a38a5949ebd4b74432afb09ceb47596dd4c00828a
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/delegate-fix-to-codex/files/base/shop/__init__.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/delegate-fix-to-codex/files/base/shop/auth.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:a7240e58b0ba52b3efa0d66127c52e459b8213718c8d37c12de7f2240da8f277
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/delegate-fix-to-codex/files/base/shop/pagination.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:6f806296ed1394b9eb71ae741b2616733ec14ff9f024ff726b6e6ab054f4be79
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/delegate-fix-to-codex/files/base/tests/__init__.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/delegate-fix-to-codex/files/base/tests/test_pagination.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:a703144438551687dce5e34d03a4285b3027f2e2af2510f41ab69cdb1dc536b3
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/delegate-fix-to-codex/graders/01-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:690e91054f58bf079f62755e8e2bf854128eeaef80b6650246e8dedb12de80f5
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/delegate-fix-to-codex/graders/02-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:bfd081d4db2f19b862c19ef51555c49d6c361e2210c78b8a3fb5acb74898611d
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/delegate-fix-to-codex/graders/03-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:3ab8ea7372cd1990e5d810c3b3ac100e39181d73e15c8679ea811a061700dadd
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/delegate-fix-to-codex/graders/04-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:8da9bbd9e6c4bcd0f7e179ac81e98c70e0aa6586118abfcd6bba17dd2bd39f81
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/delegate-fix-to-codex/graders/05-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:8af3f5f294c7676010994b6746d3477563ea64d85b7e0742607905509fcc5c79
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/delegate-fix-to-codex/graders/06-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:dac6f4096c85e1cd682f8e036c4822eea6d90921db2bbe8c0f82e802517cb429
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/delegate-fix-to-codex/graders/07-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:fb480f49c9aabb8d52dcca2b6e450616557bb923d6b73f667d2c9163deb36980
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/delegate-fix-to-codex/place-files.sh
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:8514843628616b828fa4877cd149040064237208b5eec361c2476cc8a2860094
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/delegate-fix-to-codex/prompt.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:9637b69f274547e182942d46a0b2cd8a4be69b676f3ec9ace3b71ba08963b995
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/design-consult-cache/case.yaml
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:dcf06722fabc6aa6f82d5dff64a31fe3dac54ac0fe084c3cfeedeb595440401f
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/design-consult-cache/files/base/DEPLOYMENT.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:b889d268ff759ccf3d5ae73105ce50558200c613b0c624d930b43f133d0b196f
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/design-consult-cache/files/base/README.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:1173ec78e94697ab0df2dd9a38a5949ebd4b74432afb09ceb47596dd4c00828a
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/design-consult-cache/files/base/shop/__init__.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/design-consult-cache/files/base/shop/auth.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:a7240e58b0ba52b3efa0d66127c52e459b8213718c8d37c12de7f2240da8f277
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/design-consult-cache/files/base/shop/catalog.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:eb7f85f5ddcbaeee69c07f2860128b0362ac7fd6c691a1202637bf76db6ecfeb
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/design-consult-cache/files/base/shop/pagination.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:0615cc1f9faa3468319a4aef495d4e03dc321596bceae1132c51149ac590ad59
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/design-consult-cache/files/base/tests/__init__.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/design-consult-cache/files/base/tests/test_pagination.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:a703144438551687dce5e34d03a4285b3027f2e2af2510f41ab69cdb1dc536b3
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/design-consult-cache/graders/01-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:2eb122129a4188e170eac6645b803e7a46ecf64b2790e7d57478629f29b0fe45
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/design-consult-cache/graders/02-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:b033dea5802e1e5308d5b663d2d581f41cdc1e38898d8bd7dd43b84d3e5c9080
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/design-consult-cache/graders/03-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:77be0e4af7e832c24cf4d0a3c53ffcdf4eb9da25d91a88fa0af67fe8d8a28e9a
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/design-consult-cache/graders/04-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:d2af57bddbcdfc6ec6c1c674c153d23f034c6ee06af37aa6ab1556059d78c6f1
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/design-consult-cache/graders/05-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:c5d9246fd5dc75691f0158b4bbd81bcdd7dcb31158bd5871959ffba69845e912
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/design-consult-cache/graders/06-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:8d335d40877272455f8e8006437d1aa30df6b436c6a8368f9156f15dd05e1e92
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/design-consult-cache/graders/07-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:971f051289b3719175dbfcc46a9b535c41d1bf20ed6ed3e44f94f96e35745ff3
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/design-consult-cache/place-files.sh
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:550f17fe98f41ea51655a48f7a4a0918086182624d20018c475b35f8d6746a4b
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/design-consult-cache/prompt.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:f317b89c55624b65b6d5fa272b3479388a36b79a79fd3c61717370caea6bd982
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/parallel-review-planted-bugs/case.yaml
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:4315cb377ecc8bdae4f503bb3e669c8474b696d676197752fde2e2bcf05d119b
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/parallel-review-planted-bugs/files/base/README.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:1173ec78e94697ab0df2dd9a38a5949ebd4b74432afb09ceb47596dd4c00828a
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/parallel-review-planted-bugs/files/base/shop/__init__.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/parallel-review-planted-bugs/files/base/shop/auth.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:a7240e58b0ba52b3efa0d66127c52e459b8213718c8d37c12de7f2240da8f277
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/parallel-review-planted-bugs/files/base/shop/pagination.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:0615cc1f9faa3468319a4aef495d4e03dc321596bceae1132c51149ac590ad59
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/parallel-review-planted-bugs/files/base/tests/__init__.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/parallel-review-planted-bugs/files/base/tests/test_pagination.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:a703144438551687dce5e34d03a4285b3027f2e2af2510f41ab69cdb1dc536b3
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/parallel-review-planted-bugs/files/feature/shop/auth.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:22ba5eb3dc7d6afcaf1ab0a173ad8b0ce5bc2eaaa1a2229823b9942ca6e3fabe
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/parallel-review-planted-bugs/files/feature/shop/discount.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:e47122580643240e6ff12825486cfe93d9027f880bf011110874ade9f3cf6992
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/parallel-review-planted-bugs/files/feature/shop/pagination.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:6f806296ed1394b9eb71ae741b2616733ec14ff9f024ff726b6e6ab054f4be79
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/parallel-review-planted-bugs/files/feature/tests/test_discount.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:c54bb4c2505e2b0399c01284485e68ed5c90918f8bbd84b0ee495c1d07606d29
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/parallel-review-planted-bugs/graders/01-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:7174f9a24faa864b50a9379b375dd7f9400196ef2dffe469df65dda309e9ed7f
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/parallel-review-planted-bugs/graders/02-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:d65bfc8c7eb4948d0217e13c201a756ee78acc59aa839f615f82490065cd83d5
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/parallel-review-planted-bugs/graders/03-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:430af75d9ee9d2cc443bd9de2299d56d0297fb5e3f35f4615441f7636791ea64
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/parallel-review-planted-bugs/graders/04-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:82383d30a07b50666eaec3732c662328f9c4e3315b589abeb087d69c852192fc
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/parallel-review-planted-bugs/graders/05-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:506fe73f373db0334b129761efe290704387ac3e9c66c8b55be3f93d621ea82e
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/parallel-review-planted-bugs/graders/06-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:f318d9b291ab80f228b1930437f412cab7112af2101a016faefd2b81c85b881d
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/parallel-review-planted-bugs/graders/07-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:d89f7ecc691c04514ee7b6448d860b6f6ed70df649366894450e339e598ab7b7
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/parallel-review-planted-bugs/graders/08-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:971f051289b3719175dbfcc46a9b535c41d1bf20ed6ed3e44f94f96e35745ff3
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/parallel-review-planted-bugs/graders/09-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:e5736da3c087ae817c364dc9265f7b83efc27d28b51a1be401a05a2d27b98159
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/parallel-review-planted-bugs/place-files.sh
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:4f10d41d1e61c5dbbfe261ad3672e5c874a317ebeafbcdf1c07cc4cd7732f259
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/evals/parallel-review-planted-bugs/prompt.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:f43597f27b00c9950b0b39674ed66af5b0926e0c4187ac14e6fe1d4a89b6293d
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/references/cli.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:db26b6b3d9072733735ca02061d6568f8b365a5da36fc057099c507295b6f281
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/references/consult.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:8ddd422fb12b104c16b5d790385ddd8ecc87027b6e11ef14930e406978f04979
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/references/delegate.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:a0e495a2ae6960e68b97fec2a4d87ba6893a1b4170b82a8c86c61c14a96217cd
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/references/review.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:3e9a569ad6599e4c17046ca5fc146334fd4ba5c9b1752f99bb76325cc7e1ca53
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/scripts/council-ask.sh
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:f9643c818b2ebc4a8647f59a176e05d3ee08536f9409965f7d95d40a19c8eb4b
+- kind: project-relative
+  target: claude
+  value: .claude/skills/agent-council/scripts/council-delegate.sh
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:69eb9d9997d4b9a8767a9876398f15e51db89dfdaee69e5856bebcfc30902ed3
 - kind: project-relative
   target: claude
   value: .claude/skills/gh-cli
@@ -196,6 +772,672 @@ deployments:
   content_hash: sha256:0326b437cdc8995822a1cc1920bab8de0caaa2cf010f3b664d118208543e9a54
 - kind: project-relative
   target: copilot
+  value: .agents/skills/agent-council
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: null
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:591f32b51946959ec45e904c695155060160652e0dd9dc4bb5f1be51d6f7d8d1
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/delegate-fix-to-codex/case.yaml
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:2b39faf764c1479eef7936f4fbd1c122dcbffc8d561967145ffc63b80465769f
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/delegate-fix-to-codex/files/base/README.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:1173ec78e94697ab0df2dd9a38a5949ebd4b74432afb09ceb47596dd4c00828a
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/delegate-fix-to-codex/files/base/shop/__init__.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/delegate-fix-to-codex/files/base/shop/auth.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:a7240e58b0ba52b3efa0d66127c52e459b8213718c8d37c12de7f2240da8f277
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/delegate-fix-to-codex/files/base/shop/pagination.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:6f806296ed1394b9eb71ae741b2616733ec14ff9f024ff726b6e6ab054f4be79
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/delegate-fix-to-codex/files/base/tests/__init__.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/delegate-fix-to-codex/files/base/tests/test_pagination.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:a703144438551687dce5e34d03a4285b3027f2e2af2510f41ab69cdb1dc536b3
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/delegate-fix-to-codex/graders/01-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:690e91054f58bf079f62755e8e2bf854128eeaef80b6650246e8dedb12de80f5
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/delegate-fix-to-codex/graders/02-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:bfd081d4db2f19b862c19ef51555c49d6c361e2210c78b8a3fb5acb74898611d
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/delegate-fix-to-codex/graders/03-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:3ab8ea7372cd1990e5d810c3b3ac100e39181d73e15c8679ea811a061700dadd
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/delegate-fix-to-codex/graders/04-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:8da9bbd9e6c4bcd0f7e179ac81e98c70e0aa6586118abfcd6bba17dd2bd39f81
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/delegate-fix-to-codex/graders/05-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:8af3f5f294c7676010994b6746d3477563ea64d85b7e0742607905509fcc5c79
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/delegate-fix-to-codex/graders/06-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:dac6f4096c85e1cd682f8e036c4822eea6d90921db2bbe8c0f82e802517cb429
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/delegate-fix-to-codex/graders/07-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:fb480f49c9aabb8d52dcca2b6e450616557bb923d6b73f667d2c9163deb36980
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/delegate-fix-to-codex/place-files.sh
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:8514843628616b828fa4877cd149040064237208b5eec361c2476cc8a2860094
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/delegate-fix-to-codex/prompt.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:9637b69f274547e182942d46a0b2cd8a4be69b676f3ec9ace3b71ba08963b995
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/design-consult-cache/case.yaml
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:dcf06722fabc6aa6f82d5dff64a31fe3dac54ac0fe084c3cfeedeb595440401f
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/design-consult-cache/files/base/DEPLOYMENT.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:b889d268ff759ccf3d5ae73105ce50558200c613b0c624d930b43f133d0b196f
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/design-consult-cache/files/base/README.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:1173ec78e94697ab0df2dd9a38a5949ebd4b74432afb09ceb47596dd4c00828a
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/design-consult-cache/files/base/shop/__init__.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/design-consult-cache/files/base/shop/auth.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:a7240e58b0ba52b3efa0d66127c52e459b8213718c8d37c12de7f2240da8f277
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/design-consult-cache/files/base/shop/catalog.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:eb7f85f5ddcbaeee69c07f2860128b0362ac7fd6c691a1202637bf76db6ecfeb
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/design-consult-cache/files/base/shop/pagination.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:0615cc1f9faa3468319a4aef495d4e03dc321596bceae1132c51149ac590ad59
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/design-consult-cache/files/base/tests/__init__.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/design-consult-cache/files/base/tests/test_pagination.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:a703144438551687dce5e34d03a4285b3027f2e2af2510f41ab69cdb1dc536b3
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/design-consult-cache/graders/01-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:2eb122129a4188e170eac6645b803e7a46ecf64b2790e7d57478629f29b0fe45
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/design-consult-cache/graders/02-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:b033dea5802e1e5308d5b663d2d581f41cdc1e38898d8bd7dd43b84d3e5c9080
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/design-consult-cache/graders/03-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:77be0e4af7e832c24cf4d0a3c53ffcdf4eb9da25d91a88fa0af67fe8d8a28e9a
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/design-consult-cache/graders/04-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:d2af57bddbcdfc6ec6c1c674c153d23f034c6ee06af37aa6ab1556059d78c6f1
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/design-consult-cache/graders/05-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:c5d9246fd5dc75691f0158b4bbd81bcdd7dcb31158bd5871959ffba69845e912
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/design-consult-cache/graders/06-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:8d335d40877272455f8e8006437d1aa30df6b436c6a8368f9156f15dd05e1e92
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/design-consult-cache/graders/07-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:971f051289b3719175dbfcc46a9b535c41d1bf20ed6ed3e44f94f96e35745ff3
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/design-consult-cache/place-files.sh
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:550f17fe98f41ea51655a48f7a4a0918086182624d20018c475b35f8d6746a4b
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/design-consult-cache/prompt.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:f317b89c55624b65b6d5fa272b3479388a36b79a79fd3c61717370caea6bd982
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/parallel-review-planted-bugs/case.yaml
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:4315cb377ecc8bdae4f503bb3e669c8474b696d676197752fde2e2bcf05d119b
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/parallel-review-planted-bugs/files/base/README.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:1173ec78e94697ab0df2dd9a38a5949ebd4b74432afb09ceb47596dd4c00828a
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/parallel-review-planted-bugs/files/base/shop/__init__.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/parallel-review-planted-bugs/files/base/shop/auth.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:a7240e58b0ba52b3efa0d66127c52e459b8213718c8d37c12de7f2240da8f277
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/parallel-review-planted-bugs/files/base/shop/pagination.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:0615cc1f9faa3468319a4aef495d4e03dc321596bceae1132c51149ac590ad59
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/parallel-review-planted-bugs/files/base/tests/__init__.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/parallel-review-planted-bugs/files/base/tests/test_pagination.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:a703144438551687dce5e34d03a4285b3027f2e2af2510f41ab69cdb1dc536b3
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/parallel-review-planted-bugs/files/feature/shop/auth.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:22ba5eb3dc7d6afcaf1ab0a173ad8b0ce5bc2eaaa1a2229823b9942ca6e3fabe
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/parallel-review-planted-bugs/files/feature/shop/discount.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:e47122580643240e6ff12825486cfe93d9027f880bf011110874ade9f3cf6992
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/parallel-review-planted-bugs/files/feature/shop/pagination.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:6f806296ed1394b9eb71ae741b2616733ec14ff9f024ff726b6e6ab054f4be79
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/parallel-review-planted-bugs/files/feature/tests/test_discount.py
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:c54bb4c2505e2b0399c01284485e68ed5c90918f8bbd84b0ee495c1d07606d29
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/parallel-review-planted-bugs/graders/01-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:7174f9a24faa864b50a9379b375dd7f9400196ef2dffe469df65dda309e9ed7f
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/parallel-review-planted-bugs/graders/02-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:d65bfc8c7eb4948d0217e13c201a756ee78acc59aa839f615f82490065cd83d5
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/parallel-review-planted-bugs/graders/03-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:430af75d9ee9d2cc443bd9de2299d56d0297fb5e3f35f4615441f7636791ea64
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/parallel-review-planted-bugs/graders/04-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:82383d30a07b50666eaec3732c662328f9c4e3315b589abeb087d69c852192fc
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/parallel-review-planted-bugs/graders/05-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:506fe73f373db0334b129761efe290704387ac3e9c66c8b55be3f93d621ea82e
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/parallel-review-planted-bugs/graders/06-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:f318d9b291ab80f228b1930437f412cab7112af2101a016faefd2b81c85b881d
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/parallel-review-planted-bugs/graders/07-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:d89f7ecc691c04514ee7b6448d860b6f6ed70df649366894450e339e598ab7b7
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/parallel-review-planted-bugs/graders/08-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:971f051289b3719175dbfcc46a9b535c41d1bf20ed6ed3e44f94f96e35745ff3
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/parallel-review-planted-bugs/graders/09-assertion.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:e5736da3c087ae817c364dc9265f7b83efc27d28b51a1be401a05a2d27b98159
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/parallel-review-planted-bugs/place-files.sh
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:4f10d41d1e61c5dbbfe261ad3672e5c874a317ebeafbcdf1c07cc4cd7732f259
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/evals/parallel-review-planted-bugs/prompt.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:f43597f27b00c9950b0b39674ed66af5b0926e0c4187ac14e6fe1d4a89b6293d
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/references/cli.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:db26b6b3d9072733735ca02061d6568f8b365a5da36fc057099c507295b6f281
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/references/consult.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:8ddd422fb12b104c16b5d790385ddd8ecc87027b6e11ef14930e406978f04979
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/references/delegate.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:a0e495a2ae6960e68b97fec2a4d87ba6893a1b4170b82a8c86c61c14a96217cd
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/references/review.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:3e9a569ad6599e4c17046ca5fc146334fd4ba5c9b1752f99bb76325cc7e1ca53
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/scripts/council-ask.sh
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:f9643c818b2ebc4a8647f59a176e05d3ee08536f9409965f7d95d40a19c8eb4b
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/agent-council/scripts/council-delegate.sh
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:69eb9d9997d4b9a8767a9876398f15e51db89dfdaee69e5856bebcfc30902ed3
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/gh-cli
+  runtime: null
+  scope: project
+  owners:
+  - jamesprial/github-skills
+  active_owner: jamesprial/github-skills
+  content_hash: null
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/gh-cli/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - jamesprial/github-skills
+  active_owner: jamesprial/github-skills
+  content_hash: sha256:8da0ac2363bfccb4cf768c60f8efe565c024bf2ee91c8a7276f5bb6436eaa2c9
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/gh-cli/references/README_gh_code_search.md
+  runtime: null
+  scope: project
+  owners:
+  - jamesprial/github-skills
+  active_owner: jamesprial/github-skills
+  content_hash: sha256:0aaf0ebf8851cb4f557186e624ff1677fa37fa299247d3d276b52f58dc3a1fb0
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/gh-cli/references/README_gh_failed_run.md
+  runtime: null
+  scope: project
+  owners:
+  - jamesprial/github-skills
+  active_owner: jamesprial/github-skills
+  content_hash: sha256:2d53d92e616c4f2ba6fa5a5dda675f89626b8e73787604c880d10f5e20cb113e
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/gh-cli/references/README_pages.md
+  runtime: null
+  scope: project
+  owners:
+  - jamesprial/github-skills
+  active_owner: jamesprial/github-skills
+  content_hash: sha256:e27fab2e71a6b28d14d1fba13b79e1c7b02a7b463fcb30c91bd8101da071bbdb
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/gh-cli/scripts/gh_code_search.py
+  runtime: null
+  scope: project
+  owners:
+  - jamesprial/github-skills
+  active_owner: jamesprial/github-skills
+  content_hash: sha256:365e22c21592fb2e75faaca5c6cae276e13673c6555fe7e8712c29c67968355b
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/gh-cli/scripts/gh_failed_run.py
+  runtime: null
+  scope: project
+  owners:
+  - jamesprial/github-skills
+  active_owner: jamesprial/github-skills
+  content_hash: sha256:c543bfcc4d0fb8325c055337aac9672b87bd03577259424b5a9962d689ce9d0b
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/gh-cli/scripts/gh_pages_deploy.py
+  runtime: null
+  scope: project
+  owners:
+  - jamesprial/github-skills
+  active_owner: jamesprial/github-skills
+  content_hash: sha256:20f8d4b208629fca5353273141bd79187157efa8f41f38fa4138d542c8a34d32
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/git-operations
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: null
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/git-operations/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:2418ada39452a99d8ecd5f863ad584b377199dd6eefb7cc43d7c0c3a7292d6c0
+- kind: project-relative
+  target: copilot
   value: .agents/skills/harness-engineering
   runtime: null
   scope: project
@@ -213,97 +1455,7 @@ deployments:
   active_owner: github/awesome-copilot
   content_hash: sha256:536ae3b482b68d818a97e511405c220d3cf3fb87f34bc4d30722dc996f4b064f
 - kind: project-relative
-  target: legacy
-  value: .agents/skills/gh-cli
-  runtime: null
-  scope: project
-  owners:
-  - jamesprial/github-skills
-  active_owner: jamesprial/github-skills
-  content_hash: null
-- kind: project-relative
-  target: legacy
-  value: .agents/skills/gh-cli/SKILL.md
-  runtime: null
-  scope: project
-  owners:
-  - jamesprial/github-skills
-  active_owner: jamesprial/github-skills
-  content_hash: sha256:8da0ac2363bfccb4cf768c60f8efe565c024bf2ee91c8a7276f5bb6436eaa2c9
-- kind: project-relative
-  target: legacy
-  value: .agents/skills/gh-cli/references/README_gh_code_search.md
-  runtime: null
-  scope: project
-  owners:
-  - jamesprial/github-skills
-  active_owner: jamesprial/github-skills
-  content_hash: sha256:0aaf0ebf8851cb4f557186e624ff1677fa37fa299247d3d276b52f58dc3a1fb0
-- kind: project-relative
-  target: legacy
-  value: .agents/skills/gh-cli/references/README_gh_failed_run.md
-  runtime: null
-  scope: project
-  owners:
-  - jamesprial/github-skills
-  active_owner: jamesprial/github-skills
-  content_hash: sha256:2d53d92e616c4f2ba6fa5a5dda675f89626b8e73787604c880d10f5e20cb113e
-- kind: project-relative
-  target: legacy
-  value: .agents/skills/gh-cli/references/README_pages.md
-  runtime: null
-  scope: project
-  owners:
-  - jamesprial/github-skills
-  active_owner: jamesprial/github-skills
-  content_hash: sha256:e27fab2e71a6b28d14d1fba13b79e1c7b02a7b463fcb30c91bd8101da071bbdb
-- kind: project-relative
-  target: legacy
-  value: .agents/skills/gh-cli/scripts/gh_code_search.py
-  runtime: null
-  scope: project
-  owners:
-  - jamesprial/github-skills
-  active_owner: jamesprial/github-skills
-  content_hash: sha256:365e22c21592fb2e75faaca5c6cae276e13673c6555fe7e8712c29c67968355b
-- kind: project-relative
-  target: legacy
-  value: .agents/skills/gh-cli/scripts/gh_failed_run.py
-  runtime: null
-  scope: project
-  owners:
-  - jamesprial/github-skills
-  active_owner: jamesprial/github-skills
-  content_hash: sha256:c543bfcc4d0fb8325c055337aac9672b87bd03577259424b5a9962d689ce9d0b
-- kind: project-relative
-  target: legacy
-  value: .agents/skills/gh-cli/scripts/gh_pages_deploy.py
-  runtime: null
-  scope: project
-  owners:
-  - jamesprial/github-skills
-  active_owner: jamesprial/github-skills
-  content_hash: sha256:20f8d4b208629fca5353273141bd79187157efa8f41f38fa4138d542c8a34d32
-- kind: project-relative
-  target: legacy
-  value: .agents/skills/git-operations
-  runtime: null
-  scope: project
-  owners:
-  - .
-  active_owner: .
-  content_hash: null
-- kind: project-relative
-  target: legacy
-  value: .agents/skills/git-operations/SKILL.md
-  runtime: null
-  scope: project
-  owners:
-  - .
-  active_owner: .
-  content_hash: sha256:2418ada39452a99d8ecd5f863ad584b377199dd6eefb7cc43d7c0c3a7292d6c0
-- kind: project-relative
-  target: legacy
+  target: copilot
   value: .agents/skills/vercel-cli
   runtime: null
   scope: project
@@ -312,7 +1464,7 @@ deployments:
   active_owner: .
   content_hash: null
 - kind: project-relative
-  target: legacy
+  target: copilot
   value: .agents/skills/vercel-cli/SKILL.md
   runtime: null
   scope: project
@@ -321,16 +1473,270 @@ deployments:
   active_owner: .
   content_hash: sha256:0326b437cdc8995822a1cc1920bab8de0caaa2cf010f3b664d118208543e9a54
 local_deployed_files:
+- .agents/skills/agent-council
+- .agents/skills/agent-council/SKILL.md
+- .agents/skills/agent-council/evals/delegate-fix-to-codex/case.yaml
+- .agents/skills/agent-council/evals/delegate-fix-to-codex/files/base/README.md
+- .agents/skills/agent-council/evals/delegate-fix-to-codex/files/base/shop/__init__.py
+- .agents/skills/agent-council/evals/delegate-fix-to-codex/files/base/shop/auth.py
+- .agents/skills/agent-council/evals/delegate-fix-to-codex/files/base/shop/pagination.py
+- .agents/skills/agent-council/evals/delegate-fix-to-codex/files/base/tests/__init__.py
+- .agents/skills/agent-council/evals/delegate-fix-to-codex/files/base/tests/test_pagination.py
+- .agents/skills/agent-council/evals/delegate-fix-to-codex/graders/01-assertion.md
+- .agents/skills/agent-council/evals/delegate-fix-to-codex/graders/02-assertion.md
+- .agents/skills/agent-council/evals/delegate-fix-to-codex/graders/03-assertion.md
+- .agents/skills/agent-council/evals/delegate-fix-to-codex/graders/04-assertion.md
+- .agents/skills/agent-council/evals/delegate-fix-to-codex/graders/05-assertion.md
+- .agents/skills/agent-council/evals/delegate-fix-to-codex/graders/06-assertion.md
+- .agents/skills/agent-council/evals/delegate-fix-to-codex/graders/07-assertion.md
+- .agents/skills/agent-council/evals/delegate-fix-to-codex/place-files.sh
+- .agents/skills/agent-council/evals/delegate-fix-to-codex/prompt.md
+- .agents/skills/agent-council/evals/design-consult-cache/case.yaml
+- .agents/skills/agent-council/evals/design-consult-cache/files/base/DEPLOYMENT.md
+- .agents/skills/agent-council/evals/design-consult-cache/files/base/README.md
+- .agents/skills/agent-council/evals/design-consult-cache/files/base/shop/__init__.py
+- .agents/skills/agent-council/evals/design-consult-cache/files/base/shop/auth.py
+- .agents/skills/agent-council/evals/design-consult-cache/files/base/shop/catalog.py
+- .agents/skills/agent-council/evals/design-consult-cache/files/base/shop/pagination.py
+- .agents/skills/agent-council/evals/design-consult-cache/files/base/tests/__init__.py
+- .agents/skills/agent-council/evals/design-consult-cache/files/base/tests/test_pagination.py
+- .agents/skills/agent-council/evals/design-consult-cache/graders/01-assertion.md
+- .agents/skills/agent-council/evals/design-consult-cache/graders/02-assertion.md
+- .agents/skills/agent-council/evals/design-consult-cache/graders/03-assertion.md
+- .agents/skills/agent-council/evals/design-consult-cache/graders/04-assertion.md
+- .agents/skills/agent-council/evals/design-consult-cache/graders/05-assertion.md
+- .agents/skills/agent-council/evals/design-consult-cache/graders/06-assertion.md
+- .agents/skills/agent-council/evals/design-consult-cache/graders/07-assertion.md
+- .agents/skills/agent-council/evals/design-consult-cache/place-files.sh
+- .agents/skills/agent-council/evals/design-consult-cache/prompt.md
+- .agents/skills/agent-council/evals/parallel-review-planted-bugs/case.yaml
+- .agents/skills/agent-council/evals/parallel-review-planted-bugs/files/base/README.md
+- .agents/skills/agent-council/evals/parallel-review-planted-bugs/files/base/shop/__init__.py
+- .agents/skills/agent-council/evals/parallel-review-planted-bugs/files/base/shop/auth.py
+- .agents/skills/agent-council/evals/parallel-review-planted-bugs/files/base/shop/pagination.py
+- .agents/skills/agent-council/evals/parallel-review-planted-bugs/files/base/tests/__init__.py
+- .agents/skills/agent-council/evals/parallel-review-planted-bugs/files/base/tests/test_pagination.py
+- .agents/skills/agent-council/evals/parallel-review-planted-bugs/files/feature/shop/auth.py
+- .agents/skills/agent-council/evals/parallel-review-planted-bugs/files/feature/shop/discount.py
+- .agents/skills/agent-council/evals/parallel-review-planted-bugs/files/feature/shop/pagination.py
+- .agents/skills/agent-council/evals/parallel-review-planted-bugs/files/feature/tests/test_discount.py
+- .agents/skills/agent-council/evals/parallel-review-planted-bugs/graders/01-assertion.md
+- .agents/skills/agent-council/evals/parallel-review-planted-bugs/graders/02-assertion.md
+- .agents/skills/agent-council/evals/parallel-review-planted-bugs/graders/03-assertion.md
+- .agents/skills/agent-council/evals/parallel-review-planted-bugs/graders/04-assertion.md
+- .agents/skills/agent-council/evals/parallel-review-planted-bugs/graders/05-assertion.md
+- .agents/skills/agent-council/evals/parallel-review-planted-bugs/graders/06-assertion.md
+- .agents/skills/agent-council/evals/parallel-review-planted-bugs/graders/07-assertion.md
+- .agents/skills/agent-council/evals/parallel-review-planted-bugs/graders/08-assertion.md
+- .agents/skills/agent-council/evals/parallel-review-planted-bugs/graders/09-assertion.md
+- .agents/skills/agent-council/evals/parallel-review-planted-bugs/place-files.sh
+- .agents/skills/agent-council/evals/parallel-review-planted-bugs/prompt.md
+- .agents/skills/agent-council/references/cli.md
+- .agents/skills/agent-council/references/consult.md
+- .agents/skills/agent-council/references/delegate.md
+- .agents/skills/agent-council/references/review.md
+- .agents/skills/agent-council/scripts/council-ask.sh
+- .agents/skills/agent-council/scripts/council-delegate.sh
 - .agents/skills/git-operations
 - .agents/skills/git-operations/SKILL.md
 - .agents/skills/vercel-cli
 - .agents/skills/vercel-cli/SKILL.md
+- .claude/skills/agent-council
+- .claude/skills/agent-council/SKILL.md
+- .claude/skills/agent-council/evals/delegate-fix-to-codex/case.yaml
+- .claude/skills/agent-council/evals/delegate-fix-to-codex/files/base/README.md
+- .claude/skills/agent-council/evals/delegate-fix-to-codex/files/base/shop/__init__.py
+- .claude/skills/agent-council/evals/delegate-fix-to-codex/files/base/shop/auth.py
+- .claude/skills/agent-council/evals/delegate-fix-to-codex/files/base/shop/pagination.py
+- .claude/skills/agent-council/evals/delegate-fix-to-codex/files/base/tests/__init__.py
+- .claude/skills/agent-council/evals/delegate-fix-to-codex/files/base/tests/test_pagination.py
+- .claude/skills/agent-council/evals/delegate-fix-to-codex/graders/01-assertion.md
+- .claude/skills/agent-council/evals/delegate-fix-to-codex/graders/02-assertion.md
+- .claude/skills/agent-council/evals/delegate-fix-to-codex/graders/03-assertion.md
+- .claude/skills/agent-council/evals/delegate-fix-to-codex/graders/04-assertion.md
+- .claude/skills/agent-council/evals/delegate-fix-to-codex/graders/05-assertion.md
+- .claude/skills/agent-council/evals/delegate-fix-to-codex/graders/06-assertion.md
+- .claude/skills/agent-council/evals/delegate-fix-to-codex/graders/07-assertion.md
+- .claude/skills/agent-council/evals/delegate-fix-to-codex/place-files.sh
+- .claude/skills/agent-council/evals/delegate-fix-to-codex/prompt.md
+- .claude/skills/agent-council/evals/design-consult-cache/case.yaml
+- .claude/skills/agent-council/evals/design-consult-cache/files/base/DEPLOYMENT.md
+- .claude/skills/agent-council/evals/design-consult-cache/files/base/README.md
+- .claude/skills/agent-council/evals/design-consult-cache/files/base/shop/__init__.py
+- .claude/skills/agent-council/evals/design-consult-cache/files/base/shop/auth.py
+- .claude/skills/agent-council/evals/design-consult-cache/files/base/shop/catalog.py
+- .claude/skills/agent-council/evals/design-consult-cache/files/base/shop/pagination.py
+- .claude/skills/agent-council/evals/design-consult-cache/files/base/tests/__init__.py
+- .claude/skills/agent-council/evals/design-consult-cache/files/base/tests/test_pagination.py
+- .claude/skills/agent-council/evals/design-consult-cache/graders/01-assertion.md
+- .claude/skills/agent-council/evals/design-consult-cache/graders/02-assertion.md
+- .claude/skills/agent-council/evals/design-consult-cache/graders/03-assertion.md
+- .claude/skills/agent-council/evals/design-consult-cache/graders/04-assertion.md
+- .claude/skills/agent-council/evals/design-consult-cache/graders/05-assertion.md
+- .claude/skills/agent-council/evals/design-consult-cache/graders/06-assertion.md
+- .claude/skills/agent-council/evals/design-consult-cache/graders/07-assertion.md
+- .claude/skills/agent-council/evals/design-consult-cache/place-files.sh
+- .claude/skills/agent-council/evals/design-consult-cache/prompt.md
+- .claude/skills/agent-council/evals/parallel-review-planted-bugs/case.yaml
+- .claude/skills/agent-council/evals/parallel-review-planted-bugs/files/base/README.md
+- .claude/skills/agent-council/evals/parallel-review-planted-bugs/files/base/shop/__init__.py
+- .claude/skills/agent-council/evals/parallel-review-planted-bugs/files/base/shop/auth.py
+- .claude/skills/agent-council/evals/parallel-review-planted-bugs/files/base/shop/pagination.py
+- .claude/skills/agent-council/evals/parallel-review-planted-bugs/files/base/tests/__init__.py
+- .claude/skills/agent-council/evals/parallel-review-planted-bugs/files/base/tests/test_pagination.py
+- .claude/skills/agent-council/evals/parallel-review-planted-bugs/files/feature/shop/auth.py
+- .claude/skills/agent-council/evals/parallel-review-planted-bugs/files/feature/shop/discount.py
+- .claude/skills/agent-council/evals/parallel-review-planted-bugs/files/feature/shop/pagination.py
+- .claude/skills/agent-council/evals/parallel-review-planted-bugs/files/feature/tests/test_discount.py
+- .claude/skills/agent-council/evals/parallel-review-planted-bugs/graders/01-assertion.md
+- .claude/skills/agent-council/evals/parallel-review-planted-bugs/graders/02-assertion.md
+- .claude/skills/agent-council/evals/parallel-review-planted-bugs/graders/03-assertion.md
+- .claude/skills/agent-council/evals/parallel-review-planted-bugs/graders/04-assertion.md
+- .claude/skills/agent-council/evals/parallel-review-planted-bugs/graders/05-assertion.md
+- .claude/skills/agent-council/evals/parallel-review-planted-bugs/graders/06-assertion.md
+- .claude/skills/agent-council/evals/parallel-review-planted-bugs/graders/07-assertion.md
+- .claude/skills/agent-council/evals/parallel-review-planted-bugs/graders/08-assertion.md
+- .claude/skills/agent-council/evals/parallel-review-planted-bugs/graders/09-assertion.md
+- .claude/skills/agent-council/evals/parallel-review-planted-bugs/place-files.sh
+- .claude/skills/agent-council/evals/parallel-review-planted-bugs/prompt.md
+- .claude/skills/agent-council/references/cli.md
+- .claude/skills/agent-council/references/consult.md
+- .claude/skills/agent-council/references/delegate.md
+- .claude/skills/agent-council/references/review.md
+- .claude/skills/agent-council/scripts/council-ask.sh
+- .claude/skills/agent-council/scripts/council-delegate.sh
 - .claude/skills/git-operations
 - .claude/skills/git-operations/SKILL.md
 - .claude/skills/vercel-cli
 - .claude/skills/vercel-cli/SKILL.md
 local_deployed_file_hashes:
+  .agents/skills/agent-council/SKILL.md: sha256:591f32b51946959ec45e904c695155060160652e0dd9dc4bb5f1be51d6f7d8d1
+  .agents/skills/agent-council/evals/delegate-fix-to-codex/case.yaml: sha256:2b39faf764c1479eef7936f4fbd1c122dcbffc8d561967145ffc63b80465769f
+  .agents/skills/agent-council/evals/delegate-fix-to-codex/files/base/README.md: sha256:1173ec78e94697ab0df2dd9a38a5949ebd4b74432afb09ceb47596dd4c00828a
+  .agents/skills/agent-council/evals/delegate-fix-to-codex/files/base/shop/__init__.py: sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  .agents/skills/agent-council/evals/delegate-fix-to-codex/files/base/shop/auth.py: sha256:a7240e58b0ba52b3efa0d66127c52e459b8213718c8d37c12de7f2240da8f277
+  .agents/skills/agent-council/evals/delegate-fix-to-codex/files/base/shop/pagination.py: sha256:6f806296ed1394b9eb71ae741b2616733ec14ff9f024ff726b6e6ab054f4be79
+  .agents/skills/agent-council/evals/delegate-fix-to-codex/files/base/tests/__init__.py: sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  .agents/skills/agent-council/evals/delegate-fix-to-codex/files/base/tests/test_pagination.py: sha256:a703144438551687dce5e34d03a4285b3027f2e2af2510f41ab69cdb1dc536b3
+  .agents/skills/agent-council/evals/delegate-fix-to-codex/graders/01-assertion.md: sha256:690e91054f58bf079f62755e8e2bf854128eeaef80b6650246e8dedb12de80f5
+  .agents/skills/agent-council/evals/delegate-fix-to-codex/graders/02-assertion.md: sha256:bfd081d4db2f19b862c19ef51555c49d6c361e2210c78b8a3fb5acb74898611d
+  .agents/skills/agent-council/evals/delegate-fix-to-codex/graders/03-assertion.md: sha256:3ab8ea7372cd1990e5d810c3b3ac100e39181d73e15c8679ea811a061700dadd
+  .agents/skills/agent-council/evals/delegate-fix-to-codex/graders/04-assertion.md: sha256:8da9bbd9e6c4bcd0f7e179ac81e98c70e0aa6586118abfcd6bba17dd2bd39f81
+  .agents/skills/agent-council/evals/delegate-fix-to-codex/graders/05-assertion.md: sha256:8af3f5f294c7676010994b6746d3477563ea64d85b7e0742607905509fcc5c79
+  .agents/skills/agent-council/evals/delegate-fix-to-codex/graders/06-assertion.md: sha256:dac6f4096c85e1cd682f8e036c4822eea6d90921db2bbe8c0f82e802517cb429
+  .agents/skills/agent-council/evals/delegate-fix-to-codex/graders/07-assertion.md: sha256:fb480f49c9aabb8d52dcca2b6e450616557bb923d6b73f667d2c9163deb36980
+  .agents/skills/agent-council/evals/delegate-fix-to-codex/place-files.sh: sha256:8514843628616b828fa4877cd149040064237208b5eec361c2476cc8a2860094
+  .agents/skills/agent-council/evals/delegate-fix-to-codex/prompt.md: sha256:9637b69f274547e182942d46a0b2cd8a4be69b676f3ec9ace3b71ba08963b995
+  .agents/skills/agent-council/evals/design-consult-cache/case.yaml: sha256:dcf06722fabc6aa6f82d5dff64a31fe3dac54ac0fe084c3cfeedeb595440401f
+  .agents/skills/agent-council/evals/design-consult-cache/files/base/DEPLOYMENT.md: sha256:b889d268ff759ccf3d5ae73105ce50558200c613b0c624d930b43f133d0b196f
+  .agents/skills/agent-council/evals/design-consult-cache/files/base/README.md: sha256:1173ec78e94697ab0df2dd9a38a5949ebd4b74432afb09ceb47596dd4c00828a
+  .agents/skills/agent-council/evals/design-consult-cache/files/base/shop/__init__.py: sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  .agents/skills/agent-council/evals/design-consult-cache/files/base/shop/auth.py: sha256:a7240e58b0ba52b3efa0d66127c52e459b8213718c8d37c12de7f2240da8f277
+  .agents/skills/agent-council/evals/design-consult-cache/files/base/shop/catalog.py: sha256:eb7f85f5ddcbaeee69c07f2860128b0362ac7fd6c691a1202637bf76db6ecfeb
+  .agents/skills/agent-council/evals/design-consult-cache/files/base/shop/pagination.py: sha256:0615cc1f9faa3468319a4aef495d4e03dc321596bceae1132c51149ac590ad59
+  .agents/skills/agent-council/evals/design-consult-cache/files/base/tests/__init__.py: sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  .agents/skills/agent-council/evals/design-consult-cache/files/base/tests/test_pagination.py: sha256:a703144438551687dce5e34d03a4285b3027f2e2af2510f41ab69cdb1dc536b3
+  .agents/skills/agent-council/evals/design-consult-cache/graders/01-assertion.md: sha256:2eb122129a4188e170eac6645b803e7a46ecf64b2790e7d57478629f29b0fe45
+  .agents/skills/agent-council/evals/design-consult-cache/graders/02-assertion.md: sha256:b033dea5802e1e5308d5b663d2d581f41cdc1e38898d8bd7dd43b84d3e5c9080
+  .agents/skills/agent-council/evals/design-consult-cache/graders/03-assertion.md: sha256:77be0e4af7e832c24cf4d0a3c53ffcdf4eb9da25d91a88fa0af67fe8d8a28e9a
+  .agents/skills/agent-council/evals/design-consult-cache/graders/04-assertion.md: sha256:d2af57bddbcdfc6ec6c1c674c153d23f034c6ee06af37aa6ab1556059d78c6f1
+  .agents/skills/agent-council/evals/design-consult-cache/graders/05-assertion.md: sha256:c5d9246fd5dc75691f0158b4bbd81bcdd7dcb31158bd5871959ffba69845e912
+  .agents/skills/agent-council/evals/design-consult-cache/graders/06-assertion.md: sha256:8d335d40877272455f8e8006437d1aa30df6b436c6a8368f9156f15dd05e1e92
+  .agents/skills/agent-council/evals/design-consult-cache/graders/07-assertion.md: sha256:971f051289b3719175dbfcc46a9b535c41d1bf20ed6ed3e44f94f96e35745ff3
+  .agents/skills/agent-council/evals/design-consult-cache/place-files.sh: sha256:550f17fe98f41ea51655a48f7a4a0918086182624d20018c475b35f8d6746a4b
+  .agents/skills/agent-council/evals/design-consult-cache/prompt.md: sha256:f317b89c55624b65b6d5fa272b3479388a36b79a79fd3c61717370caea6bd982
+  .agents/skills/agent-council/evals/parallel-review-planted-bugs/case.yaml: sha256:4315cb377ecc8bdae4f503bb3e669c8474b696d676197752fde2e2bcf05d119b
+  .agents/skills/agent-council/evals/parallel-review-planted-bugs/files/base/README.md: sha256:1173ec78e94697ab0df2dd9a38a5949ebd4b74432afb09ceb47596dd4c00828a
+  .agents/skills/agent-council/evals/parallel-review-planted-bugs/files/base/shop/__init__.py: sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  .agents/skills/agent-council/evals/parallel-review-planted-bugs/files/base/shop/auth.py: sha256:a7240e58b0ba52b3efa0d66127c52e459b8213718c8d37c12de7f2240da8f277
+  .agents/skills/agent-council/evals/parallel-review-planted-bugs/files/base/shop/pagination.py: sha256:0615cc1f9faa3468319a4aef495d4e03dc321596bceae1132c51149ac590ad59
+  .agents/skills/agent-council/evals/parallel-review-planted-bugs/files/base/tests/__init__.py: sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  .agents/skills/agent-council/evals/parallel-review-planted-bugs/files/base/tests/test_pagination.py: sha256:a703144438551687dce5e34d03a4285b3027f2e2af2510f41ab69cdb1dc536b3
+  .agents/skills/agent-council/evals/parallel-review-planted-bugs/files/feature/shop/auth.py: sha256:22ba5eb3dc7d6afcaf1ab0a173ad8b0ce5bc2eaaa1a2229823b9942ca6e3fabe
+  .agents/skills/agent-council/evals/parallel-review-planted-bugs/files/feature/shop/discount.py: sha256:e47122580643240e6ff12825486cfe93d9027f880bf011110874ade9f3cf6992
+  .agents/skills/agent-council/evals/parallel-review-planted-bugs/files/feature/shop/pagination.py: sha256:6f806296ed1394b9eb71ae741b2616733ec14ff9f024ff726b6e6ab054f4be79
+  .agents/skills/agent-council/evals/parallel-review-planted-bugs/files/feature/tests/test_discount.py: sha256:c54bb4c2505e2b0399c01284485e68ed5c90918f8bbd84b0ee495c1d07606d29
+  .agents/skills/agent-council/evals/parallel-review-planted-bugs/graders/01-assertion.md: sha256:7174f9a24faa864b50a9379b375dd7f9400196ef2dffe469df65dda309e9ed7f
+  .agents/skills/agent-council/evals/parallel-review-planted-bugs/graders/02-assertion.md: sha256:d65bfc8c7eb4948d0217e13c201a756ee78acc59aa839f615f82490065cd83d5
+  .agents/skills/agent-council/evals/parallel-review-planted-bugs/graders/03-assertion.md: sha256:430af75d9ee9d2cc443bd9de2299d56d0297fb5e3f35f4615441f7636791ea64
+  .agents/skills/agent-council/evals/parallel-review-planted-bugs/graders/04-assertion.md: sha256:82383d30a07b50666eaec3732c662328f9c4e3315b589abeb087d69c852192fc
+  .agents/skills/agent-council/evals/parallel-review-planted-bugs/graders/05-assertion.md: sha256:506fe73f373db0334b129761efe290704387ac3e9c66c8b55be3f93d621ea82e
+  .agents/skills/agent-council/evals/parallel-review-planted-bugs/graders/06-assertion.md: sha256:f318d9b291ab80f228b1930437f412cab7112af2101a016faefd2b81c85b881d
+  .agents/skills/agent-council/evals/parallel-review-planted-bugs/graders/07-assertion.md: sha256:d89f7ecc691c04514ee7b6448d860b6f6ed70df649366894450e339e598ab7b7
+  .agents/skills/agent-council/evals/parallel-review-planted-bugs/graders/08-assertion.md: sha256:971f051289b3719175dbfcc46a9b535c41d1bf20ed6ed3e44f94f96e35745ff3
+  .agents/skills/agent-council/evals/parallel-review-planted-bugs/graders/09-assertion.md: sha256:e5736da3c087ae817c364dc9265f7b83efc27d28b51a1be401a05a2d27b98159
+  .agents/skills/agent-council/evals/parallel-review-planted-bugs/place-files.sh: sha256:4f10d41d1e61c5dbbfe261ad3672e5c874a317ebeafbcdf1c07cc4cd7732f259
+  .agents/skills/agent-council/evals/parallel-review-planted-bugs/prompt.md: sha256:f43597f27b00c9950b0b39674ed66af5b0926e0c4187ac14e6fe1d4a89b6293d
+  .agents/skills/agent-council/references/cli.md: sha256:db26b6b3d9072733735ca02061d6568f8b365a5da36fc057099c507295b6f281
+  .agents/skills/agent-council/references/consult.md: sha256:8ddd422fb12b104c16b5d790385ddd8ecc87027b6e11ef14930e406978f04979
+  .agents/skills/agent-council/references/delegate.md: sha256:a0e495a2ae6960e68b97fec2a4d87ba6893a1b4170b82a8c86c61c14a96217cd
+  .agents/skills/agent-council/references/review.md: sha256:3e9a569ad6599e4c17046ca5fc146334fd4ba5c9b1752f99bb76325cc7e1ca53
+  .agents/skills/agent-council/scripts/council-ask.sh: sha256:f9643c818b2ebc4a8647f59a176e05d3ee08536f9409965f7d95d40a19c8eb4b
+  .agents/skills/agent-council/scripts/council-delegate.sh: sha256:69eb9d9997d4b9a8767a9876398f15e51db89dfdaee69e5856bebcfc30902ed3
   .agents/skills/git-operations/SKILL.md: sha256:2418ada39452a99d8ecd5f863ad584b377199dd6eefb7cc43d7c0c3a7292d6c0
   .agents/skills/vercel-cli/SKILL.md: sha256:0326b437cdc8995822a1cc1920bab8de0caaa2cf010f3b664d118208543e9a54
+  .claude/skills/agent-council/SKILL.md: sha256:591f32b51946959ec45e904c695155060160652e0dd9dc4bb5f1be51d6f7d8d1
+  .claude/skills/agent-council/evals/delegate-fix-to-codex/case.yaml: sha256:2b39faf764c1479eef7936f4fbd1c122dcbffc8d561967145ffc63b80465769f
+  .claude/skills/agent-council/evals/delegate-fix-to-codex/files/base/README.md: sha256:1173ec78e94697ab0df2dd9a38a5949ebd4b74432afb09ceb47596dd4c00828a
+  .claude/skills/agent-council/evals/delegate-fix-to-codex/files/base/shop/__init__.py: sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  .claude/skills/agent-council/evals/delegate-fix-to-codex/files/base/shop/auth.py: sha256:a7240e58b0ba52b3efa0d66127c52e459b8213718c8d37c12de7f2240da8f277
+  .claude/skills/agent-council/evals/delegate-fix-to-codex/files/base/shop/pagination.py: sha256:6f806296ed1394b9eb71ae741b2616733ec14ff9f024ff726b6e6ab054f4be79
+  .claude/skills/agent-council/evals/delegate-fix-to-codex/files/base/tests/__init__.py: sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  .claude/skills/agent-council/evals/delegate-fix-to-codex/files/base/tests/test_pagination.py: sha256:a703144438551687dce5e34d03a4285b3027f2e2af2510f41ab69cdb1dc536b3
+  .claude/skills/agent-council/evals/delegate-fix-to-codex/graders/01-assertion.md: sha256:690e91054f58bf079f62755e8e2bf854128eeaef80b6650246e8dedb12de80f5
+  .claude/skills/agent-council/evals/delegate-fix-to-codex/graders/02-assertion.md: sha256:bfd081d4db2f19b862c19ef51555c49d6c361e2210c78b8a3fb5acb74898611d
+  .claude/skills/agent-council/evals/delegate-fix-to-codex/graders/03-assertion.md: sha256:3ab8ea7372cd1990e5d810c3b3ac100e39181d73e15c8679ea811a061700dadd
+  .claude/skills/agent-council/evals/delegate-fix-to-codex/graders/04-assertion.md: sha256:8da9bbd9e6c4bcd0f7e179ac81e98c70e0aa6586118abfcd6bba17dd2bd39f81
+  .claude/skills/agent-council/evals/delegate-fix-to-codex/graders/05-assertion.md: sha256:8af3f5f294c7676010994b6746d3477563ea64d85b7e0742607905509fcc5c79
+  .claude/skills/agent-council/evals/delegate-fix-to-codex/graders/06-assertion.md: sha256:dac6f4096c85e1cd682f8e036c4822eea6d90921db2bbe8c0f82e802517cb429
+  .claude/skills/agent-council/evals/delegate-fix-to-codex/graders/07-assertion.md: sha256:fb480f49c9aabb8d52dcca2b6e450616557bb923d6b73f667d2c9163deb36980
+  .claude/skills/agent-council/evals/delegate-fix-to-codex/place-files.sh: sha256:8514843628616b828fa4877cd149040064237208b5eec361c2476cc8a2860094
+  .claude/skills/agent-council/evals/delegate-fix-to-codex/prompt.md: sha256:9637b69f274547e182942d46a0b2cd8a4be69b676f3ec9ace3b71ba08963b995
+  .claude/skills/agent-council/evals/design-consult-cache/case.yaml: sha256:dcf06722fabc6aa6f82d5dff64a31fe3dac54ac0fe084c3cfeedeb595440401f
+  .claude/skills/agent-council/evals/design-consult-cache/files/base/DEPLOYMENT.md: sha256:b889d268ff759ccf3d5ae73105ce50558200c613b0c624d930b43f133d0b196f
+  .claude/skills/agent-council/evals/design-consult-cache/files/base/README.md: sha256:1173ec78e94697ab0df2dd9a38a5949ebd4b74432afb09ceb47596dd4c00828a
+  .claude/skills/agent-council/evals/design-consult-cache/files/base/shop/__init__.py: sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  .claude/skills/agent-council/evals/design-consult-cache/files/base/shop/auth.py: sha256:a7240e58b0ba52b3efa0d66127c52e459b8213718c8d37c12de7f2240da8f277
+  .claude/skills/agent-council/evals/design-consult-cache/files/base/shop/catalog.py: sha256:eb7f85f5ddcbaeee69c07f2860128b0362ac7fd6c691a1202637bf76db6ecfeb
+  .claude/skills/agent-council/evals/design-consult-cache/files/base/shop/pagination.py: sha256:0615cc1f9faa3468319a4aef495d4e03dc321596bceae1132c51149ac590ad59
+  .claude/skills/agent-council/evals/design-consult-cache/files/base/tests/__init__.py: sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  .claude/skills/agent-council/evals/design-consult-cache/files/base/tests/test_pagination.py: sha256:a703144438551687dce5e34d03a4285b3027f2e2af2510f41ab69cdb1dc536b3
+  .claude/skills/agent-council/evals/design-consult-cache/graders/01-assertion.md: sha256:2eb122129a4188e170eac6645b803e7a46ecf64b2790e7d57478629f29b0fe45
+  .claude/skills/agent-council/evals/design-consult-cache/graders/02-assertion.md: sha256:b033dea5802e1e5308d5b663d2d581f41cdc1e38898d8bd7dd43b84d3e5c9080
+  .claude/skills/agent-council/evals/design-consult-cache/graders/03-assertion.md: sha256:77be0e4af7e832c24cf4d0a3c53ffcdf4eb9da25d91a88fa0af67fe8d8a28e9a
+  .claude/skills/agent-council/evals/design-consult-cache/graders/04-assertion.md: sha256:d2af57bddbcdfc6ec6c1c674c153d23f034c6ee06af37aa6ab1556059d78c6f1
+  .claude/skills/agent-council/evals/design-consult-cache/graders/05-assertion.md: sha256:c5d9246fd5dc75691f0158b4bbd81bcdd7dcb31158bd5871959ffba69845e912
+  .claude/skills/agent-council/evals/design-consult-cache/graders/06-assertion.md: sha256:8d335d40877272455f8e8006437d1aa30df6b436c6a8368f9156f15dd05e1e92
+  .claude/skills/agent-council/evals/design-consult-cache/graders/07-assertion.md: sha256:971f051289b3719175dbfcc46a9b535c41d1bf20ed6ed3e44f94f96e35745ff3
+  .claude/skills/agent-council/evals/design-consult-cache/place-files.sh: sha256:550f17fe98f41ea51655a48f7a4a0918086182624d20018c475b35f8d6746a4b
+  .claude/skills/agent-council/evals/design-consult-cache/prompt.md: sha256:f317b89c55624b65b6d5fa272b3479388a36b79a79fd3c61717370caea6bd982
+  .claude/skills/agent-council/evals/parallel-review-planted-bugs/case.yaml: sha256:4315cb377ecc8bdae4f503bb3e669c8474b696d676197752fde2e2bcf05d119b
+  .claude/skills/agent-council/evals/parallel-review-planted-bugs/files/base/README.md: sha256:1173ec78e94697ab0df2dd9a38a5949ebd4b74432afb09ceb47596dd4c00828a
+  .claude/skills/agent-council/evals/parallel-review-planted-bugs/files/base/shop/__init__.py: sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  .claude/skills/agent-council/evals/parallel-review-planted-bugs/files/base/shop/auth.py: sha256:a7240e58b0ba52b3efa0d66127c52e459b8213718c8d37c12de7f2240da8f277
+  .claude/skills/agent-council/evals/parallel-review-planted-bugs/files/base/shop/pagination.py: sha256:0615cc1f9faa3468319a4aef495d4e03dc321596bceae1132c51149ac590ad59
+  .claude/skills/agent-council/evals/parallel-review-planted-bugs/files/base/tests/__init__.py: sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+  .claude/skills/agent-council/evals/parallel-review-planted-bugs/files/base/tests/test_pagination.py: sha256:a703144438551687dce5e34d03a4285b3027f2e2af2510f41ab69cdb1dc536b3
+  .claude/skills/agent-council/evals/parallel-review-planted-bugs/files/feature/shop/auth.py: sha256:22ba5eb3dc7d6afcaf1ab0a173ad8b0ce5bc2eaaa1a2229823b9942ca6e3fabe
+  .claude/skills/agent-council/evals/parallel-review-planted-bugs/files/feature/shop/discount.py: sha256:e47122580643240e6ff12825486cfe93d9027f880bf011110874ade9f3cf6992
+  .claude/skills/agent-council/evals/parallel-review-planted-bugs/files/feature/shop/pagination.py: sha256:6f806296ed1394b9eb71ae741b2616733ec14ff9f024ff726b6e6ab054f4be79
+  .claude/skills/agent-council/evals/parallel-review-planted-bugs/files/feature/tests/test_discount.py: sha256:c54bb4c2505e2b0399c01284485e68ed5c90918f8bbd84b0ee495c1d07606d29
+  .claude/skills/agent-council/evals/parallel-review-planted-bugs/graders/01-assertion.md: sha256:7174f9a24faa864b50a9379b375dd7f9400196ef2dffe469df65dda309e9ed7f
+  .claude/skills/agent-council/evals/parallel-review-planted-bugs/graders/02-assertion.md: sha256:d65bfc8c7eb4948d0217e13c201a756ee78acc59aa839f615f82490065cd83d5
+  .claude/skills/agent-council/evals/parallel-review-planted-bugs/graders/03-assertion.md: sha256:430af75d9ee9d2cc443bd9de2299d56d0297fb5e3f35f4615441f7636791ea64
+  .claude/skills/agent-council/evals/parallel-review-planted-bugs/graders/04-assertion.md: sha256:82383d30a07b50666eaec3732c662328f9c4e3315b589abeb087d69c852192fc
+  .claude/skills/agent-council/evals/parallel-review-planted-bugs/graders/05-assertion.md: sha256:506fe73f373db0334b129761efe290704387ac3e9c66c8b55be3f93d621ea82e
+  .claude/skills/agent-council/evals/parallel-review-planted-bugs/graders/06-assertion.md: sha256:f318d9b291ab80f228b1930437f412cab7112af2101a016faefd2b81c85b881d
+  .claude/skills/agent-council/evals/parallel-review-planted-bugs/graders/07-assertion.md: sha256:d89f7ecc691c04514ee7b6448d860b6f6ed70df649366894450e339e598ab7b7
+  .claude/skills/agent-council/evals/parallel-review-planted-bugs/graders/08-assertion.md: sha256:971f051289b3719175dbfcc46a9b535c41d1bf20ed6ed3e44f94f96e35745ff3
+  .claude/skills/agent-council/evals/parallel-review-planted-bugs/graders/09-assertion.md: sha256:e5736da3c087ae817c364dc9265f7b83efc27d28b51a1be401a05a2d27b98159
+  .claude/skills/agent-council/evals/parallel-review-planted-bugs/place-files.sh: sha256:4f10d41d1e61c5dbbfe261ad3672e5c874a317ebeafbcdf1c07cc4cd7732f259
+  .claude/skills/agent-council/evals/parallel-review-planted-bugs/prompt.md: sha256:f43597f27b00c9950b0b39674ed66af5b0926e0c4187ac14e6fe1d4a89b6293d
+  .claude/skills/agent-council/references/cli.md: sha256:db26b6b3d9072733735ca02061d6568f8b365a5da36fc057099c507295b6f281
+  .claude/skills/agent-council/references/consult.md: sha256:8ddd422fb12b104c16b5d790385ddd8ecc87027b6e11ef14930e406978f04979
+  .claude/skills/agent-council/references/delegate.md: sha256:a0e495a2ae6960e68b97fec2a4d87ba6893a1b4170b82a8c86c61c14a96217cd
+  .claude/skills/agent-council/references/review.md: sha256:3e9a569ad6599e4c17046ca5fc146334fd4ba5c9b1752f99bb76325cc7e1ca53
+  .claude/skills/agent-council/scripts/council-ask.sh: sha256:f9643c818b2ebc4a8647f59a176e05d3ee08536f9409965f7d95d40a19c8eb4b
+  .claude/skills/agent-council/scripts/council-delegate.sh: sha256:69eb9d9997d4b9a8767a9876398f15e51db89dfdaee69e5856bebcfc30902ed3
   .claude/skills/git-operations/SKILL.md: sha256:2418ada39452a99d8ecd5f863ad584b377199dd6eefb7cc43d7c0c3a7292d6c0
   .claude/skills/vercel-cli/SKILL.md: sha256:0326b437cdc8995822a1cc1920bab8de0caaa2cf010f3b664d118208543e9a54

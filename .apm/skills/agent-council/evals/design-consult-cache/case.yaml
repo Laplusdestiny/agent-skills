@@ -1,0 +1,10 @@
+schema_version: "1.1"
+name: design-consult-cache
+expected_outcome: |
+  Claude forms its own recommendation, asks Codex and agy the same neutral question (without
+  revealing its own pick), and reports a comparison of the options with each agent's position,
+  where they agree and disagree, a recommendation that engages with the 5-second price
+  freshness requirement across 8 processes, and the open question(s) the user must decide.
+  No code is changed.
+context:
+  scaffold_script: place-files.sh
