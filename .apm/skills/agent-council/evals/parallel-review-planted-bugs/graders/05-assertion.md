@@ -4,4 +4,4 @@ focus: trace
 weight: 1
 ---
 
-The response shows, for each finding, which of Claude / Codex / agy raised it
+For each finding, the response or the report.json it rendered shows which of Claude / Codex / agy raised it

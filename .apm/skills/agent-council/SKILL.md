@@ -6,7 +6,7 @@ description: Orchestrates Codex CLI (`codex`) and Antigravity CLI (`agy`) from C
 # Agent Council
 
 Claude Code is the orchestrator. Codex and Antigravity (`agy`, run on a Gemini model) are
-council members that Claude consults or delegates to through two bundled scripts. Their output
+council members that Claude consults or delegates to through the bundled scripts. Their output
 is evidence to verify or a draft to review — Claude owns the final judgment, every git
 operation, and what gets reported to the user.
 
@@ -47,6 +47,10 @@ delegate chosen by fit, unless the user wants competing drafts.
 | Design / architecture / approach question | 4. Consultation | `references/consult.md` |
 | Screenshots, mockups, a live UI to critique or compare | 5. UI/design review | `references/review.md` |
 
+Workflows 1, 2, 4, and 5 all finish with an HTML report the user reads and can answer —
+read `references/report.md` before writing the result up. The one exception is a cross-review
+run as a step inside a delegation: it feeds the delegation and gets no report of its own.
+
 Read the reference before starting that workflow. For exact CLI flags and known quirks, see
 `references/cli.md` (only needed when calling the CLIs by hand or debugging a failure).
 
@@ -78,7 +82,8 @@ These apply to every workflow; the references build on them.
 
 ## Scripts
 
-Both live in `scripts/` next to this file; run them with `bash <skill-dir>/scripts/<name>`.
+All live in `scripts/` next to this file; run the `.sh` ones with
+`bash <skill-dir>/scripts/<name>` and the report renderer with `python3`.
 Put prompts and outputs in a scratch directory (e.g. `$TMPDIR/agent-council/<task>/`), not in
 the user's repo.
 
@@ -90,9 +95,12 @@ council-ask.sh --prompt-file P.md --out-dir OUT [--agents codex,agy] [--cwd REPO
 # Write: task runs in its own worktree/branch; result comes back as OUT/changes.patch
 council-delegate.sh --agent codex|agy --task-file T.md --name short-slug [--repo REPO]
                     [--base REF] [--reuse] [--timeout 1800]
+
+# Report: verified result (report.json, written by Claude) -> one self-contained HTML page
+python3 council-report.py --input OUT/report.json --lang ja|en [--raw-dir DIR]... [--no-raw] [--open]
 ```
 
-Each script prints one status line per agent (ok / failed / timed out / unavailable) and the
+Each `.sh` script prints one status line per agent (ok / failed / timed out / unavailable) and the
 paths to read next. Long runs are normal (reviews often take 1–5 minutes, delegations longer);
 run them in the background when your harness supports it and keep doing your own analysis
 meanwhile.
@@ -100,26 +108,52 @@ meanwhile.
 ## Report: the consensus table
 
 Reviews, cross-reviews, UI reviews, and consultations all end with this shape, written in the
-user's language. One row per distinct finding, merged across agents, most severe first:
+user's language. One row per distinct finding, merged across agents, most severe first. The
+complete table lives in the HTML report (next section); the chat gets the short form, so the
+same result isn't written out twice:
 
 ```markdown
 ## Council review: <what was reviewed>
-Reviewers: Claude · Codex (<model or "default">) · agy (<model>) — raw outputs: <out-dir>
+Reviewers: Claude · Codex (<model or "default">) · agy (<model>)
+
+<the conclusion in two or three sentences: what the user should do next>
 
 | # | Severity | Finding (file:line) | Claude | Codex | agy | Verdict |
 |---|----------|---------------------|:------:|:-----:|:---:|---------|
-| 1 | High | Token compared with `==` (auth.py:42) | ✓ | ✓ | – | **Confirmed** — timing-safe compare needed |
-| 2 | Med  | N+1 query in list view (views.py:88) | – | – | ✓ | **Confirmed** — reproduced by reading the loop |
-| 3 | Low  | "Unused import" (utils.py:3) | – | ✓ | – | **False positive** — used in a type hint |
-| 4 | Med  | Retry policy too aggressive | ✓ | – | ✓ | **Your call** — depends on SLA |
+| F1 | High | Token compared with `==` (auth.py:42) | ✓ | ✓ | – | **Confirmed** — timing-safe compare needed |
+| F2 | Med  | N+1 query in list view (views.py:88) | – | – | ✓ | **Confirmed** — reproduced by reading the loop |
+| F4 | Med  | Retry policy too aggressive | ✓ | – | ✓ | **Your call** — depends on SLA |
 
+Also in the report: 2 low findings, 1 false positive.
 **Where the agents disagree:** <the divergences that matter, and which side you believe and why>
 **Not covered:** <agents that failed/timed out, areas nobody looked at>
+Report: <absolute path of report.html>
 ```
 
+The chat table lists every High and Med finding and every **Your call**; Low, Info, and false
+positives are a count unless one of them is the interesting part. Use the report's ids (`F1`,
+`D1`) in the chat too, so a reply that says "F2" means the same thing in both places.
+
 Verdicts: **Confirmed** (you checked it and it's real), **False positive** (you checked and it
-isn't — say why), **Your call** (real trade-off; the user decides). Keep raw outputs on disk and
-point to them rather than pasting them; the table is the deliverable.
+isn't — say why), **Your call** (real trade-off; the user decides). Raw outputs stay on disk
+and in the report rather than in the chat.
+
+## HTML report and follow-up rounds
+
+The verified result goes into an HTML page the user can read without this conversation, and
+their reaction to it drives the next round:
+
+1. Write the result to `<out-dir>/report.json` and render it with `council-report.py`,
+   with `--lang` set to the language the user asked for (otherwise the one they write in).
+2. Reply with the short consensus table, the absolute path of `report.html`, and an invitation
+   to send feedback — comments copied from the page, or a plain reply. Then wait.
+3. When feedback comes, examine it (re-check the code, or re-ask the council on the specific
+   point), record the feedback and your response in `report.json`, re-render, and report what
+   changed. Repeat until the user is done.
+
+Feedback changes the report, not the repo: a comment like "fix F1" is a new task with its own
+confirmation, not permission carried over from the review. The JSON schema and the rules for
+each round are in `references/report.md`.
 
 ## Safety
 

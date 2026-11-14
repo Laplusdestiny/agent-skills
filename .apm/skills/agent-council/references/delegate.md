@@ -92,7 +92,9 @@ The delegate's summary is a claim; the patch is the evidence.
 - If the script warned that the delegate made commits, inspect them; the patch already
   includes them.
 - For non-trivial changes, consider a cross-review (Workflow 2 in `review.md`) by the member
-  who didn't write it.
+  who didn't write it. This one is a check on the way to finishing the delegation, so it
+  doesn't produce an HTML report or wait for the user — its confirmed findings go into the
+  fixes below and into your report on the delegation.
 
 If it needs fixes: small ones, make them yourself in the worktree; larger ones, write a
 follow-up brief listing exactly what's wrong and rerun with `--reuse` (same `--name`), which

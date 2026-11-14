@@ -1,0 +1,50 @@
+{
+  "kind": "review",
+  "lang": "ja",
+  "title": "割引機能ブランチのレビュー",
+  "subject": "feature/discounts を main と比較",
+  "round": 1,
+  "summary": "マージ前に直すべき問題が2件あります。トークンの比較とページネーションの開始位置です。割引率の上限は仕様の確認が必要です。",
+  "reviewers": [
+    {"id": "claude", "label": "Claude", "status": "ok"},
+    {"id": "codex", "label": "Codex", "model": "default", "status": "ok"},
+    {"id": "agy", "label": "agy", "model": "gemini-3-pro-high", "status": "ok"}
+  ],
+  "findings": [
+    {
+      "id": "F1", "severity": "high",
+      "title": "トークンを == で比較している",
+      "location": "shop/auth.py:4",
+      "detail": "`hmac.compare_digest` をやめて `==` で比較しているため、比較にかかる時間からトークンを推測される余地があります。",
+      "raised_by": ["claude", "codex", "agy"],
+      "verdict": "confirmed",
+      "verdict_note": "差分で `hmac.compare_digest` が `==` に置き換わっていることを確認しました。",
+      "suggested_fix": "`hmac.compare_digest(provided, expected)` に戻す。"
+    },
+    {
+      "id": "F2", "severity": "med",
+      "title": "ページネーションの開始位置が1ページ分ずれている",
+      "location": "shop/pagination.py:5",
+      "detail": "`start = page * per_page` になり、1ページ目を指定すると11件目から返ります。",
+      "raised_by": ["claude", "codex"],
+      "verdict": "confirmed",
+      "verdict_note": "main では `(page - 1) * per_page` でした。",
+      "suggested_fix": "`start = (page - 1) * per_page` に戻す。"
+    },
+    {
+      "id": "F3", "severity": "med",
+      "title": "割引率が 100% を超えると価格が負になる",
+      "location": "shop/discount.py:3-5",
+      "detail": "`apply_discount` は `percent` の上限を確認していないため、150 を渡すと負の価格を返します。",
+      "raised_by": ["agy"],
+      "verdict": "your_call",
+      "verdict_note": "計算上は負になります。100% を超える割引が仕様として許されるかどうかで、不具合かどうかが決まります。"
+    }
+  ],
+  "decisions": [
+    {"id": "D1", "question": "100% を超える割引率はありえますか。", "context": "ありえないなら F3 は不具合で、上限の確認を入れるべきです。"}
+  ],
+  "disagreements": "F3 は agy だけが挙げました。",
+  "not_covered": "テストは実行していません。",
+  "history": []
+}

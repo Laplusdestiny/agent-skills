@@ -1,7 +1,8 @@
 # Review workflows (1. Parallel multi-review · 2. Cross-review · 5. UI/design review)
 
 All three share one loop: **pin the target → review it yourself → ask the others in parallel →
-verify every claim → consensus table** (format in SKILL.md).
+verify every claim → consensus table** (format in SKILL.md) **→ HTML report → follow-up rounds
+on the user's feedback** (`references/report.md`).
 
 ## Contents
 - Shared steps
@@ -31,7 +32,11 @@ verify every claim → consensus table** (format in SKILL.md).
    positive / Your call. Merge duplicates (same root cause = one row, even if worded
    differently). Watch for findings about code that isn't in the diff; they may be valid
    pre-existing issues, but label them as such.
-6. **Report** with the consensus table. Mention which agents failed or timed out.
+6. **Write `report.json` and render the HTML report** (`references/report.md`). It holds
+   every finding, including the ones that failed verification and the agents that failed or
+   timed out.
+7. **Reply** with the short consensus table and the report's path, then wait; whatever the
+   user sends back starts a follow-up round (`references/report.md`).
 
 ## Reviewer prompt template
 
@@ -80,6 +85,13 @@ against the delegate's worktree (the patch is uncommitted there), while you do y
 of the same patch. Feed confirmed issues back to the author — for a delegate, a follow-up
 round with `council-delegate.sh --reuse` and a task file listing the fixes; for your own code,
 fix it yourself.
+
+Who asked for the cross-review decides how it ends:
+- **The user asked for it** ("have the others check what you just wrote"): it ends like any
+  review — HTML report, short table, wait for feedback. Fixing what it found is a new task.
+- **You ran it as a check inside a delegation** (`delegate.md` step 5): no HTML report and no
+  stop. Verify the findings, send the confirmed ones back through `--reuse`, and fold what
+  was found and fixed into the delegation's own report to the user.
 
 When Claude is the author, be especially honest in the Claude column: list what you were
 unsure about while writing it, and don't mark the reviewers' findings as false positives

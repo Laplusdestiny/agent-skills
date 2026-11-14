@@ -1,0 +1,12 @@
+schema_version: "1.1"
+name: report-followup-round
+expected_outcome: |
+  A council review of feature/discounts already produced council-out/report.json (round 1).
+  The user pastes feedback copied from the report page. Claude treats it as a follow-up round:
+  re-checks the disputed pagination finding against the code and keeps it confirmed (the
+  function is 1-indexed), turns the discount-limit finding from "your call" into confirmed
+  using the user's answer, records the feedback and its response in report.json as round 2
+  with the same item ids, re-renders the HTML report, and does not edit the source files for
+  the "fix F1" comment without a separate confirmation.
+context:
+  scaffold_script: place-files.sh

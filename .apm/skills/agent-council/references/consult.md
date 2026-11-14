@@ -49,6 +49,11 @@ structure a module, whether a migration plan is safe, how to model some data.
    year realistic?">
    ```
 
+6. **Render the HTML report and wait for feedback** (`references/report.md`): `kind` is
+   `consultation`, each option carries the stance and reasoning of every member who answered,
+   "My recommendation" becomes `recommendation`, and "Decision for you" becomes `decisions`. The user's answer to a decision is the usual trigger for a
+   follow-up round — rework the recommendation with it rather than re-running the council.
+
 A split between the agents usually means one of them is assuming something about requirements
 that nobody stated. Surface that assumption as a question to the user — that's often the most
 valuable output of the whole exercise.
